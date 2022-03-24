@@ -1,4 +1,4 @@
-# Trackgenix.
+# Trackgenix
 Trackgenix is an app we are developing as part of a learning program.
  
 ## Landing Page
