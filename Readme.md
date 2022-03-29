@@ -3,11 +3,13 @@ Trackgenix is an app we are developing as part of a learning program. The main i
  
 ## Landing Page
 This is a project for the HTML structure of the landing page of the app, being the program's second assignment.
-
+```bash
 Project Status: Completed
 Made by: Paula Rinaldi
 ```
-## Get this project 
+
+## Get this project
+``` 
 1. Above the list of files, click Code.
 2. To clone the repository using HTTPS, under "Clone with HTTPS", click copy icon.
 3. Open Terminal
