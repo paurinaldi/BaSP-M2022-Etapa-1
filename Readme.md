@@ -3,7 +3,7 @@ Trackgenix is an app we are developing as part of a learning program. The main i
  
 ## Landing Page
 This is a project for the HTML structure of the landing page of the app, being the program's second assignment.
-```bash
+```
 Project Status: Completed
 Made by: Paula Rinaldi
 ```
@@ -16,7 +16,7 @@ Made by: Paula Rinaldi
 4. Change the current working directory to the location where you want the cloned directory.
 5. Type git clone, and then paste the URL you copied earlier.
 6. Press Enter to create your local clone.
-7. Once on your local folder, Open inside folder Semana-01
+7. Once on your local folder, open inside folder Semana-01
 8. Click on index.html 
 ```
 
