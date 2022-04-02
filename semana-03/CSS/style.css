@@ -6,11 +6,13 @@ body{
     font-family: "Roboto", Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: #fff;
     color: #000;
+    width: 100%;
 }
 
 header{
     background-color: #50A780;
     width: 100%;
+    position: relative;
 }
 
 #recuadro-boton-menu{
@@ -87,7 +89,7 @@ header{
 }
 aside{
     width: 22.2%;
-    height: 79.60%;
+    height: 100%;
     float: left;
     background-image: linear-gradient(#50A780, white);
 }
@@ -176,11 +178,53 @@ aside li{
     margin-left: 127px;
     margin-top: 16px;
     margin-right: 24px;
+    float:left;
+}
+
+#logo-titulos{
+    margin:0px
 }
 
 #logo-titulos h1{
     font-size: 40px;
     text-transform: uppercase;
+    margin-left: 0px;
     margin-top: 16px;
     display: inline-block;
+}
+
+h2{
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    display: block;
+}
+
+
+#presentation{
+    margin-right: 217px;
+    margin-bottom:65px;
+}
+
+#presentation img{
+    width: 523px;
+    height: 325px;
+    float: left;
+    margin-right: 23px;
+    margin-left:217px;
+
+}
+#presentation p{
+    font-size: 21px;
+    display: inline;
+}
+
+#imagenes-chicas{
+    margin-left: 217px;
+}
+
+#imagenes-chicas img{
+    width: 106px;
+    height: 82px;
+    display: inline;
 }
