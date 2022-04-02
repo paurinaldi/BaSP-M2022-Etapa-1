@@ -189,7 +189,7 @@ aside li{
     font-size: 40px;
     text-transform: uppercase;
     margin-left: 0px;
-    margin-top: 16px;
+    margin-top: 18px;
     display: inline-block;
 }
 
@@ -227,4 +227,87 @@ h2{
     width: 106px;
     height: 82px;
     display: inline;
+}
+
+#section-2{
+    width: 100%;
+    height:269px;
+    background-color: #49A37B;
+}
+
+#products{
+    width: 249px;
+    height: 100%;
+    border-right: #000 1px solid;
+    display: inline-block;
+    margin-left: 391px;
+
+}
+
+#products h4, #products ul{
+    margin-right: 142px;
+    text-align: left;
+}
+
+#company{
+    width: 26%;
+    height: 100%;
+    border-right: #000 1px solid;
+    display: inline-block;
+}
+
+#company h4, #company ul, #support h4, #support ul{
+    margin-left: 145px;
+}
+
+#support{
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+}
+
+h4{
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 21px;
+}
+
+#section-2 li{
+    margin-bottom: 12px;
+}
+#section-2 a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+#section-2 a:visited{
+    text-decoration: none;
+}
+
+footer{
+    margin-top: 16px;
+    height: 180px;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+#footer-icons{
+    margin-bottom: 41px;
+}
+footer a{
+    text-decoration: none;
+    color: #505168;
+    font-size: 20px;
+    margin-left: 22px;
+}
+
+footer a:visited{
+    text-decoration: none;
+    color: #505168;
+}
+
+#copyright{
+    display: block;
 }
