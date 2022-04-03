@@ -59,7 +59,8 @@ header{
     background-image: url(https://icon-library.com/images/search-magnifying-glass-icon/search-magnifying-glass-icon-3.jpg);
     background-position: right;
     background-repeat: no-repeat;
-    background-size: 30px;
+    background-size: 20px;
+    background-position-x: 410px;
     width: 453px;
     height: 51px;
     border: none;
@@ -67,7 +68,10 @@ header{
     margin-bottom: 11px;
     margin-top: 10px;
     font-size: 20px;
+    text-align: left;
+    padding-left: 20px;
 }
+
 
 #recuadro-botones{
     width: 24.9%;
@@ -87,11 +91,18 @@ header{
 #signup-button{
     margin-left: 57px;
 }
+
 aside{
-    width: 22.2%;
+    width: 20%;
     height: 100%;
-    float: left;
+    display: inline-block;
     background-image: linear-gradient(#50A780, white);
+    vertical-align: top;
+}
+
+main{
+    display: inline-block;
+    width: 70%;
 }
 
 nav{
@@ -171,62 +182,111 @@ aside li{
     font-size: 22px;
     margin-top: 165px;
 }
-
-#logo-titulos img{
-    width: 60px;
-    height: 60px;
-    margin-left: 127px;
-    margin-top: 16px;
-    margin-right: 24px;
-    float:left;
-}
-
-#logo-titulos{
-    margin:0px
-}
-
-#logo-titulos h1{
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-left: 0px;
-    margin-top: 18px;
+  
+  .main-header {
     display: inline-block;
-}
-
-h2{
+    margin-bottom: 20px;
+    margin-left: 127px;
+  }
+  
+  .logo {
+    vertical-align: top;
+    height: 80px;
+    margin-top: 12px;
+    margin-right: 12px;
+    display: inline-block;
+  }
+  
+  .title-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+  }
+  
+  h1 {
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 40px;
+    line-height: 47px;
+  }
+  
+  h2 {
+    display: inline-block;
+    margin: 0;
     font-size: 25px;
+    line-height: 29px;
     text-transform: uppercase;
     margin-bottom: 27px;
-    display: block;
-}
-
+  }
 
 #presentation{
-    margin-right: 217px;
     margin-bottom:65px;
+    display: inline-block;
+    width: 100%;
 }
 
 #presentation img{
-    width: 523px;
+    width: 53%;
     height: 325px;
-    float: left;
     margin-right: 23px;
     margin-left:217px;
-
+    display: inline-block;
+    margin-bottom: 0px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 #presentation p{
     font-size: 21px;
-    display: inline;
-}
-
-#imagenes-chicas{
-    margin-left: 217px;
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    vertical-align: top;
+    padding-right: 40px;
+    margin-bottom: 0px;
 }
 
 #imagenes-chicas img{
     width: 106px;
     height: 82px;
-    display: inline;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+#imagenes-chicas{
+    margin-left: 553px;
+    margin-right: 217px;
+    width: 90%;
+    margin-left: 217px;
+}
+
+
+.img-text p{
+    width: 106px;
+    height: 28px;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 2px;
+}
+
+.img-text{
+    display: inline-block;
+    margin-right: 6.6%;
+    background-color: #EFE7E7;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+#managment{
+    margin-right: none;
+    display:inline-block;
+    background-color: #EFE7E7;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+}
+
+#managment p{
+    width: 106px;
+    height: 28px;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 2px;
 }
 
 #section-2{
@@ -237,10 +297,11 @@ h2{
 
 #products{
     width: 249px;
-    height: 100%;
+    height: 85%;
     border-right: #000 1px solid;
     display: inline-block;
-    margin-left: 391px;
+    margin-left: 330px;
+    margin-top: 19px;
 
 }
 
@@ -251,9 +312,10 @@ h2{
 
 #company{
     width: 26%;
-    height: 100%;
+    height: 85%;
     border-right: #000 1px solid;
     display: inline-block;
+    margin-top: 19px;
 }
 
 #company h4, #company ul, #support h4, #support ul{
@@ -262,8 +324,9 @@ h2{
 
 #support{
     width: 30%;
-    height: 100%;
+    height: 85%;
     display: inline-block;
+    margin-top: 19px;
 }
 
 h4{
