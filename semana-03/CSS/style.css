@@ -12,11 +12,13 @@ body{
 header{
     background-color: #50A780;
     width: 100%;
-    position: relative;
+    height: 7.5%;
+    padding-top: 3px;
 }
 
 #recuadro-boton-menu{
     height: 100%;
+    margin-left: 25px;
     display: inline-block;
 }
 
@@ -34,8 +36,8 @@ header{
     width: 10%;
     height: 2.3%;
     display: inline;
-    margin-left: 16.6%;
-    margin-top: 29px;
+    margin-left: 230px;
+    margin-top: 0px;
 }
 
 #tutorials-contact{
@@ -53,6 +55,7 @@ header{
     margin-left: 4.8%;
     display: inline-block;
     margin-right: 6.5%;
+    height: 100%;
 }
 
 #search-bar{
@@ -62,11 +65,9 @@ header{
     background-size: 20px;
     background-position-x: 410px;
     width: 453px;
-    height: 51px;
+    height: 75%;
     border: none;
     border-radius: 200px;
-    margin-bottom: 11px;
-    margin-top: 10px;
     font-size: 20px;
     text-align: left;
     padding-left: 20px;
@@ -75,6 +76,7 @@ header{
 
 #recuadro-botones{
     width: 24.9%;
+    height: 100%;
     display: inline-block;
 }
 
@@ -85,7 +87,7 @@ header{
     font-size: 24px;
     display: inline;
     width: 157px;
-    height: 48px;
+    height: 75%;
 }
 
 #signup-button{
@@ -94,7 +96,7 @@ header{
 
 aside{
     width: 22%;
-    height: 100%;
+    height: 1950px;
     display: inline-block;
     background-image: linear-gradient(#50A780, white);
     vertical-align: top;
@@ -103,11 +105,11 @@ aside{
 nav{
     margin-top: 37px;
     margin-left: 27.65px;
-
 }
 
 aside h3{
     font-size: 30px;
+    padding-bottom: 14px;
     border-bottom: 2px solid #F13312;
     width: 65%;
 }
@@ -120,6 +122,7 @@ aside a{
 
 aside li{
     margin-top: 18.05px;
+    padding-bottom: 14px;
     border-bottom: 1px solid #CECACA;
     width: 65%;
 }
@@ -131,6 +134,7 @@ aside li{
 
 #contact-info{
     margin-left: 27.65px;
+    padding-right: 6px;
 }
 
 #contact-info p{
@@ -144,6 +148,7 @@ aside li{
     height: 24.1;
     color: #505168;
     margin-right: 5.01px;
+    display: inline-block;
 }
 
 #contact-info a{
@@ -153,22 +158,18 @@ aside li{
 #mail{
     width: 344.61px;
     height: 91.94px;
+    width: 75%;
+    display: inline-block;
     border-bottom: 1px solid #CECACA;
-    width: 65%;
 }
 
 #direccion{
     margin-top: 13.58px;
     font-size: 20px;
-    text-shadow: #000;
-}
-
-#direccion-2{
-    margin-left: 32.66px;
 }
 
 #get-system-info-button{
-    width: 327px;
+    width: 90%;
     height: 47px;
     border-radius: 5px;
     border: #000 1px solid;
@@ -178,47 +179,42 @@ aside li{
     margin-top: 165px;
 }
 
-    #section-1{
-        display: inline-block;
-        width: 70%;
-    }
+#section-1{
+    display: inline-block;
+    width: 70%;
+}
   
-  .main-header {
+.main-header {
     display: inline-block;
     margin-bottom: 20px;
     margin-left: 127px;
-  }
+}
   
-  .logo {
-    vertical-align: top;
+.logo {
     height: 80px;
     margin-top: 12px;
     margin-right: 12px;
     display: inline-block;
-  }
+}
   
-  .title-container {
+.title-container {
     display: inline-block;
-    vertical-align: top;
     margin-top: 15px;
-  }
+}
   
-  h1 {
+h1 {
     text-align: left;
-    margin-bottom: 0;
-    margin-top: 0;
     font-size: 40px;
     line-height: 47px;
-  }
+}
   
-  h2 {
-    display: inline-block;
-    margin: 0;
+h2 {
+    text-align: left;
     font-size: 25px;
     line-height: 29px;
     text-transform: uppercase;
     margin-bottom: 27px;
-  }
+}
 
 #presentation{
     margin-bottom:65px;
