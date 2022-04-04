@@ -276,14 +276,14 @@ aside li{
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 
-#managment{
+#management{
     margin-right: none;
     display:inline-block;
     background-color: #EFE7E7;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 
-#managment p{
+#management p{
     width: 106px;
     height: 28px;
     text-align: center;
@@ -349,14 +349,15 @@ aside li{
 
 #about-us img{
     width: 27%;
-    height: 126px;
+    height: 100%;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
-    display: inline-block;
 }
 
 #p-img-1{
     margin-left: 22px;
     display: inline-block;
+    height: 30%;
+    margin-bottom: 0px;
 }
 
 #p-img-1 p{
@@ -371,12 +372,12 @@ aside li{
 #p-img-2{
     display: inline-block;
     margin-left: 284px;
-    margin-top: -50px;
+    height: 30%;
 }
 
 #p-img-2 p{
     display: inline-block;
-    width: 60%;
+    width: 63%;
     vertical-align: top;
     font-size: 17px;
     margin-left: 15px;
@@ -396,15 +397,67 @@ aside li{
 
 form{
     display: inline-block;
+    width: 833px;
+    height: 350px;
+    margin-bottom: 162px;
+}
+
+#name-mail-contact{
+    width: 40%;
+    height: 100%;
+    font-weight: bold;
     font-size: 22px;
     color:#373867;
+    margin-right: 70px;
+    display: inline-block;
+}
+#name-mail-contact label{
+    width: 100%;
+    display: block;
+}
+
+.name-email-input{
+    width: 100%;
+    height: 53px;
+    margin: 24px 0px;
+    border-radius: 4px;
+    border: 1px solid #7B61FF;
+}
+
+form select{
+    width: 100%;
+    border-radius: 4px;
+    height: 32px;
+    border: 1px solid #7B61FF;
+    margin: 24px 0px;
+}
+
+#text-area-send{
+    display: inline-block;
+    width: 51%;
+    height: 100%;
+    vertical-align: top;
+}
+
+#text-area-send textarea{
+    border: 1px solid #7B61FF;
+    border-radius: 4px;
+    width: 100%;
+    height: 243px;
+    margin: 48px 0px 21px;
+}
+
+#text-area-send input{
+    font-size: 18px;
     font-weight: bold;
+    color: #505168;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    border: none;
+    width: 75%;
+    height: 33px;
+    margin-left: 52px;
 }
-
-form label{
-}
-
-
 
 #section-2{
     width: 100%;

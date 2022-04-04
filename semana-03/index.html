@@ -94,10 +94,10 @@
                 alt="Confidence">
                 <p>Confidence</p>
                 </div>
-                <div id="managment">
+                <div id="management">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR4eO2rmCp1zheX2tdHtABQGSe2A0lK6OpbT_vIJUIr_GCQR_GhEQOy56whal0501XbXc&usqp=CAU"
-                alt="managment">
-                <p>Managment</p>
+                alt="management">
+                <p>Management</p>
                 </div>
             </div>
             <div id="app-functions">
@@ -142,17 +142,21 @@
             <div id="system-info">
                 <h4>Get system information</h4>
                 <form>
-                    <label>Name</label>
-                    <input type="text" placeholder="Write your name">
-                    <label">E-mail</label>
-                    <input type="text" placeholder="Write your E-mail">
-                    <label>Select contact area</label>
-                    <select name="selector">
-                            <option value="Option1">Option 1</option>
-                            <option value="Option2">Option 2</option>
-                    </select>
-                    <textarea name="message" placeholder="Write your message"></textarea>
-                    <input type="submit" name="send" value= "Send"> 
+                    <div id="name-mail-contact">
+                        <label>Name</label>
+                        <input class="name-email-input" type="text" placeholder="Write your name">
+                        <label>E-mail</label>
+                        <input class ="name-email-input" type="text" placeholder="Write your E-mail">
+                        <label>Select contact area</label>
+                        <select name="selector">
+                                <option value="Option1">Option 1</option>
+                                <option value="Option2">Option 2</option>
+                        </select>
+                    </div>
+                    <div id="text-area-send">
+                        <textarea name="message" placeholder="Write your message"></textarea>
+                        <input type="submit" name="send" value= "Send"> 
+                    </div>
                 </form>
             </div>
         </section>
