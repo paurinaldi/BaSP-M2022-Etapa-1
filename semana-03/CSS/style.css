@@ -287,22 +287,22 @@ h2 {
     padding-top: 2px;
 }
 
-#app-functions{
+.app-functions{
     display: inline-block;
     width: 100%;
     margin-bottom: 37px;
 }
 
-#app-functions h3{
+.app-functions h3{
     font-size: 27px;
     margin-bottom: 12px;
 }
 
-#app-functions li{
+.app-functions li{
     font-size: 20px;
 }
 
-#app-functions li:before{
+.app-functions li:before{
     content: "-"
 }
 
