@@ -9,7 +9,7 @@ Trackgenix is an app we are developing as part of a learning program. The main i
 4. Change the current working directory to the location where you want the cloned directory.
 5. Type git clone, and then paste the URL you copied earlier.
 6. Press Enter to create your local clone.
-7. Once on your local folder, open the folder semana-01 or semana-02 corresponding of each week's descripted below.
+7. Once on your local folder, open the folder semana-02 or semana-03 corresponding of each week's descripted below.
 8. Click on index.html 
 ```
 
