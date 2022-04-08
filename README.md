@@ -9,7 +9,7 @@ Trackgenix is an app we are developing as part of a learning program. The main i
 4. Change the current working directory to the location where you want the cloned directory.
 5. Type git clone, and then paste the URL you copied earlier.
 6. Press Enter to create your local clone.
-7. Once on your local folder, open the folder semana-02 or semana-03 corresponding of each week's descripted below.
+7. Once on your local folder, open the folder corresponding of each week's descripted below.
 8. Click on index.html 
 ```
 
@@ -18,6 +18,9 @@ We coded the HTML structure of the landing page of the app, being the program's 
 
 ## Week 03: First CSS approach 
 On this week we took the HTML structure we worked on for the landing page, created a styling sheet and styled it with CSS.
+
+## Week 04: Flexbox
+This week's assignment is to make our landing page into a responsive page, using Flexbox and taking a mobile-first design approach. 
 
 ```
 Project Status: Developing
