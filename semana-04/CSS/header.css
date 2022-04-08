@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #50A780;
+    height: 7.5%;
+}
+
+.menu-burger{
+    margin-left: 5px;
+}
+.burger{
+    background-color: #50A780;
+    border: none;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.search-icon {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #fff;
+    order: 4;
+    margin-right: 5px;
+}
+.buttons-container{
+    flex-basis: 60%;
+    flex-shrink: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-shrink: 2;
+}
+.button{
+    margin:5px;
+    background-color: #fff;
+    border: none;
+    border-radius: 200px;
+    font-size: 19px;
+    padding: 0px 15px;
+}
+
+
+
+@media screen and (max-width: 481px){
+
+    .tutorials-contact{
+        display: none;
+    }
+
+    .search-container{
+        display: none;
+    }
+}
