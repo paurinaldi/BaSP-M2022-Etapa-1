@@ -25,9 +25,8 @@ header{
 }
 
 .tutorials-contact{
+    flex:0.5;
     height: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
     display: flex;
 }
 
@@ -58,8 +57,10 @@ header{
 
 
 .search-container{
-    width: 40%;
-    margin-right: 5%;
+    flex: 4;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .search-bar{
@@ -83,6 +84,7 @@ header{
     order: 4;
     margin-right: 5px;
 }
+
 .buttons-container{
     display: flex;
     height: 100%;
@@ -99,7 +101,7 @@ header{
 
 
 
-@media screen and (max-width: 481px){
+@media screen and (max-width: 767px){
 
     .tutorials-contact{
         display: none;
@@ -111,21 +113,56 @@ header{
 }
 
 
-@media screen and (min-width: 481px){
+@media screen and (min-width: 768px){
+    header{
+        justify-content: space-between;
+        margin: auto;
+    }
 
-    .search-icon{
+    .tutorials-contact{
+        justify-content: flex-end;
+    }
+
+    .search-icon, .tutorials-contact li:first-child{
         display: none;
     }
 
-    .tutorials-contact li:first-child{
-        display: none;
+    .search-container{
+        flex:2;
+        justify-content: center
+    }
+
+    .search-bar{
+        width: 65%;
+    }
+
+    .buttons-container{
+        flex:1;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
     }
 
     .button{
-        font-size: 15px;
-        padding: 0 10px;
+        padding: 2% 8%;
+        font-size: 19px;
+        align-self: center;
     }
 }
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 1024px){
+    .buttons-container{
+        flex:1;
+    }
+
+    .search-container{
+        flex: 2;
+    }
+
+    .tutorials-contact{
+        flex:1;
+    }
+    .tutorials-contact li:first-child{
+        display: flex;
+    }
 }

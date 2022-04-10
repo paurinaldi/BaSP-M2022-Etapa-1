@@ -8,8 +8,7 @@ footer{
 }
 
 footer a{
-    margin-left: 5px;
-    font-size: 20px;
+    margin-left: 1%;
     text-decoration: none;
     color: #505168;
 }
@@ -20,8 +19,8 @@ footer a:visited{
 }
 
 .footer-icons i{
-    font-size: 9px;
     text-align: center;
+    margin-bottom: 1%;
 }
 
 
@@ -29,4 +28,15 @@ footer a:visited{
     display: flex;
     flex-direction: column;
     font-family: "Roboto", Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+
+@media screen and (min-width: 768px){
+    footer{
+        font-size: 22px;
+    }
+
+    .footer-icons i{
+        font-size: 15px;
+    }
 }

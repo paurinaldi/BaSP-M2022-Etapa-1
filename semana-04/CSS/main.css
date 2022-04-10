@@ -19,7 +19,7 @@
 }
 
 .title-container{
-    margin-left: 10Spx;
+    margin-left: 10px;
 }
 
 .title-container h1{
@@ -31,20 +31,26 @@
     text-align: center;
 }
 
-#presentation{
+.presentation{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     font-size: 12px;
+    margin-bottom: 10%;
 }
 
-#presentation img{
-    width: 350px;
-    height: 243px;
+.presentation img{
+    width: 75%;
+    height: 75%
 }
-#presentation p{
+
+.presentation p{
     padding: 10px;
     text-align: center;
+}
+
+.img-and-app-function{
+    margin-top: 10%;
 }
 
 .img-text-container{
@@ -58,7 +64,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     font-size: 14px;
     text-align: center;
-    margin: 40px 60px;
+    margin: 3% 3%;
 }
 
 .img-text:nth-child(1){
@@ -92,26 +98,27 @@
 
 .title-list h3{
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 3%;
 }
 
 .title-list{
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 6%;
+    margin-top: 5%;
 }
 
-#about-us{
+.about-us{
     background-color: #E9E9E9;
     border-radius: 20px;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
-    margin: 20px;
+    margin: 5%;
     font-size: 10px;
     font-weight: lighter;
     padding: 15px;
 }
 
 .p-img-container{
-    margin-top: 10px;
+    margin-top: 4%;
     display: flex;
     flex-direction: column;
 }
@@ -120,22 +127,22 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
+    padding: 2%;
 }
 
 
-#about-us img{
+.p-img img{
     width: 92px;
     height: 51px;
     padding: 0px 5px;
 }
 
-#about-us h3{
+.about-us h3{
     font-size: 18px;
     font-weight: bold;
 }
 
-#about-us h4{
+.about-us h4{
     font-size: 12px;
     font-weight: normal;
 }
@@ -152,7 +159,7 @@
 #section-2 a{
     font-size: 11px;
     text-decoration: none;
-    color: #fff;
+    color: #DBDBDB;
 }
 
 #section-2 a:visited{
@@ -165,8 +172,8 @@
 }
 
 .section-2-category{
-    padding:0px 30px;
-    margin: 20px 0px;
+    padding:0px 5%;
+    margin: 4% 0%;
 }
 
 #border-between{
@@ -176,48 +183,66 @@
 }
 
 
-@media screen and (max-width: 481px){
-    aside{
-        display: none;
-    }
-
-    #system-info{
+@media screen and (max-width: 768px){
+    aside, #system-info{
         display: none;
     }
 }
 
-@media screen and (min-width: 481px){
+@media screen and (min-width: 768px){
 
-    aside{
+    aside, #system-info{
         display: none;
-    }
-
-    #system-info{
-        display: none;
-    }
-
-    #presentation{
-        flex-wrap: nowrap;
     }
 
     #section-1{
-        margin: 0px 15%;
+        margin: 0px 5%;
     }
 
-    .imgs-and-appfunction{
+    .main-header{
+        justify-content: left;
+        width: 100%;
+        }
+
+    .presentation{
+        flex-wrap: nowrap;
+        font-size: 20px;
+        height: 25%;
+        width: 100%;
+    }
+
+    .presentation p {
+        text-align: left;
+        padding-left: 2%;
+        padding-top: 0%;
+        flex:1
+    }
+
+    .presentation img{
+        width: 70%;  
+    }
+
+    .imgs-and-app-function{
         display: flex;
-        margin-top: 10%;
-        margin-bottom: 10%;
+        margin-top: 5%;
     }
     
-
     .img-text-container{
         width: 50%;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-left: 5%;
+    }
+
+    .title-list{
+        margin-top: 0%;
     }
 
     .img-text{
-        margin: 0% 6% 6%;
+        font-size: 17px;
+    }
+
+    .app-functions{
+        font-size: 17px;
     }
 
     .app-functions{
@@ -225,4 +250,73 @@
         order: -1;
     }
 
+    .about-us{
+        font-size: 16px;
+    }
+
+    .about-us h3{
+        font-size: 25px;
+        font-weight: normal;
+    }
+
+    .about-us h4{
+        font-size: 18px;
+        padding-top: 2%;
+    }
+
+    #section-2 h4{
+        font-size: 22px;
+        margin-bottom: 15%;
+    }
+
+    #section-2 a{
+        font-size: 20px;
+    }
+    
+    #section-2 li{
+        padding-bottom: 10%;
+    }
+
 }
+
+
+@media screen and (min-width: 1024px){
+
+    .presentation{
+        font-size: 21px;
+    }
+
+    .presentation img{
+        width: 75%;
+    }
+
+    .presentation p{
+        padding-top: 2%;
+    }
+
+    .imgs-and-app-function{
+        flex-flow: column wrap;
+        align-items: center;
+        margin-top: 0%;
+    }
+
+    .img-text-container{
+        flex-wrap: nowrap;
+        margin: 0 0 5% 0;
+    }
+
+    .img-text{
+        margin-left: 5%
+    }
+
+    .app-functions{
+        order:0;
+    }
+
+    #system-info{
+        display: flex;
+    }
+
+}
+
+
