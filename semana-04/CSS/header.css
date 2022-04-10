@@ -1,4 +1,4 @@
-*{
+body{
     box-sizing: border-box;
     font-family: "Roboto", Oxygen, Ubuntu, Cantarell, sans-serif;
 }
@@ -15,12 +15,65 @@ header{
 .menu-burger{
     margin-left: 5px;
 }
+
 .burger{
     background-color: #50A780;
     border: none;
     font-size: 15px;
     font-weight: lighter;
     color: #fff;
+}
+
+.tutorials-contact{
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+}
+
+.tutorials-contact ul{
+    display: flex;
+    align-self: center;
+
+}
+
+.tutorials-contact a{
+    font-size: 17px;
+    text-decoration: none;
+    color: #000;
+}
+
+.tutorials-contact li:last-child{
+    border-left: #000 1px solid;
+    padding-left: 6px;
+}
+
+.tutorials-contact li:first-child{
+    padding-right: 6px;
+}
+
+.tutorials-contact a:visited{
+    color: #000;
+}
+
+
+.search-container{
+    width: 40%;
+    margin-right: 5%;
+}
+
+.search-bar{
+    width: 100%;
+    height: 75%;
+    padding-left: 20px;
+    background-image: url(https://icon-library.com/images/search-magnifying-glass-icon/search-magnifying-glass-icon-3.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-size: 15px;
+    border: none;
+    border-radius: 200px;
+    font-size: 20px;
 }
 
 .search-icon {
@@ -31,12 +84,10 @@ header{
     margin-right: 5px;
 }
 .buttons-container{
-    flex-basis: 60%;
-    flex-shrink: 2;
     display: flex;
-    justify-content: space-around;
-    flex-shrink: 2;
+    height: 100%;
 }
+
 .button{
     margin:5px;
     background-color: #fff;
@@ -57,4 +108,24 @@ header{
     .search-container{
         display: none;
     }
+}
+
+
+@media screen and (min-width: 481px){
+
+    .search-icon{
+        display: none;
+    }
+
+    .tutorials-contact li:first-child{
+        display: none;
+    }
+
+    .button{
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (min-width: 769px){
 }
