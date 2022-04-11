@@ -14,8 +14,8 @@
 aside{
     display: flex;
     flex-direction: column;
-    width: 36%;
-    height: 2000px;
+    width: 33%;
+    height: 1800px;
     background-image: linear-gradient(#50A780, #fff);
 }
 
@@ -74,6 +74,7 @@ aside li{
 
 .direccion{
     display: flex;
+
     margin-top: 10%;
     font-size: 18px;
 }
@@ -83,15 +84,19 @@ aside li{
 }
 
 .get-system-info-button{
-    height: 5%;
-    margin-top: 80%;
+    width: 95%;
+    margin-top: 100%;
+}
+
+.get-system-info-button button{
+    width: 100%;
+    height: 100%;
     background-color: #49A37B;
     border-radius: 5px;
     border: #000 1px solid;
-    font-size: 20px;
-    text-align: left;
+    font-size: 16px;
     color: #fff;
-    padding-right: 2%;
+    padding: 2%;
 }
 
 nav{
@@ -135,7 +140,8 @@ nav{
 
 .presentation img{
     width: 75%;
-    height: 75%
+    height: 75%;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
 }
 
 .presentation p{
@@ -151,6 +157,7 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 0% 15%
 }
 
 .img-text{
@@ -158,7 +165,7 @@ nav{
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     font-size: 14px;
     text-align: center;
-    margin: 8%;
+    margin: 5%;
 }
 
 .img-text:nth-child(1){
@@ -241,6 +248,80 @@ nav{
     font-weight: normal;
 }
 
+.system-info{
+    color: #373867;
+    font-weight: bold;
+    width: 80%;
+    align-self: center;
+}
+
+.system-info h4{
+    font-size: 25px;
+    padding: 1% 0%;
+}
+
+form{
+    display: flex;
+    width: 100%;
+    border-top: #373867 1px solid;
+    height: 100%;
+}
+
+form label{
+    padding: 4% 0%;
+}
+
+.name-mail-contact input, select, textarea{
+    border: 1px solid #373867;
+    border-radius: 4px;
+}
+
+select{
+    padding: 1% 0%;
+    width: 90%;
+}
+
+.name-mail-contact{
+    display: flex;
+    flex-flow: column wrap;
+    width: 50%;
+    font-size: 22px;
+    padding: 1% 2% 1% 0%;
+}
+
+.name-mail-contact input{
+    height: 14%;
+}
+
+.text-area-send{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    width: 60%;
+    padding-top: 6.5%;
+    margin-left: 5%;
+
+}
+
+.text-area-send textarea{
+    width: 100%;
+    height: 75%;
+}
+
+.text-area-send input{
+    margin-top: 3%;
+    padding: 1%;
+    width: 80%;
+    font-weight: bold;
+    align-self:center;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #373867;
+}
+
+
 #section-2{
     display: flex;
     flex-wrap: wrap;
@@ -277,19 +358,23 @@ nav{
 
 
 @media screen and (max-width: 768px){
-    aside, #system-info{
+    aside, .system-info{
         display: none;
     }
 }
 
 @media screen and (min-width: 768px){
 
-    aside, #system-info{
+    aside, .system-info{
         display: none;
     }
 
     #section-1{
-        margin: 0% 10%;
+        margin: 0% 5%;
+    }
+
+    header{
+        height: 7%;
     }
 
     .main-header{
@@ -323,7 +408,7 @@ nav{
     .img-text-container{
         width: 50%;
         justify-content: space-around;
-        margin-left: 5%;
+        margin: 0% 0% 5% 0%;
     }
 
     .title-list{
@@ -396,45 +481,40 @@ nav{
 
     .presentation img{
         width: 65%;
-        height: 100%;
-        margin-bottom: 5%;
+        height: 90%;
     }
 
     .imgs-and-app-function{
         flex-flow: column wrap;
         align-items: center;
+        justify-content: space-around;
         margin-top: 0%;
     }
 
     .img-text-container{
         flex-wrap: nowrap;
-        margin: 0% 0% 5% 0%;
-        justify-content: space-between;
         width: 100%;
-        border: #000 1px solid;
+        margin-bottom: 10%;
     }
 
     .img-text{
-        margin: 4%;
-        border: #000 1px solid;
-    }
-
-    .img-text img{
+        margin: 3.5%;
     }
 
     .app-functions{
         order:0;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
     }
 
     .title-list{
         text-align: left;
+        width:47%;
     }
 
-    #system-info{
-        display: flex;
+    .system-info{
+        display:initial
     }
 
     .aside-section1, aside{
