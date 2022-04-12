@@ -7,9 +7,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #50A780;
     width: 100%;
     height: 6%;
+    background-color: #50A780;
 }
 
 .menu-burger{
@@ -25,9 +25,7 @@ header{
 }
 
 .tutorials-contact{
-    flex:0.5;
-    height: 100%;
-    display: flex;
+    display: none;
 }
 
 .tutorials-contact ul{
@@ -42,25 +40,21 @@ header{
     color: #000;
 }
 
+.tutorials-contact li:first-child{
+    padding-right: 6px;
+}
+
 .tutorials-contact li:last-child{
     border-left: #000 1px solid;
     padding-left: 6px;
-}
-
-.tutorials-contact li:first-child{
-    padding-right: 6px;
 }
 
 .tutorials-contact a:visited{
     color: #000;
 }
 
-
 .search-container{
-    flex: 4;
-    display: flex;
-    align-items: center;
-    height: 100%;
+    display: none;
 }
 
 .search-bar{
@@ -78,11 +72,11 @@ header{
 }
 
 .search-icon {
+    order: 4;
+    margin-right: 2%;
     font-size: 15px;
     font-weight: lighter;
     color: #fff;
-    order: 4;
-    margin-right: 5px;
 }
 
 .buttons-container{
@@ -101,18 +95,6 @@ header{
 
 
 
-@media screen and (max-width: 767px){
-
-    .tutorials-contact{
-        display: none;
-    }
-
-    .search-container{
-        display: none;
-    }
-}
-
-
 @media screen and (min-width: 768px){
     header{
         justify-content: space-between;
@@ -120,33 +102,32 @@ header{
     }
 
     .tutorials-contact{
-        justify-content: flex-end;
-    }
-
-    .search-icon, .tutorials-contact li:first-child{
-        display: none;
+        display:flex;
+        height: 100%;
+        margin-left: 3%;
     }
 
     .search-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex:2;
-        justify-content: center
+        height: 100%;
     }
 
     .search-bar{
         width: 65%;
     }
 
+    .search-icon{
+        display: none;
+    }
+
     .buttons-container{
-        flex:1;
+        flex:1.5;
         justify-content: space-around;
         height: 100%;
         width: 100%;
-    }
-
-    .button{
-        padding: 2% 8%;
-        font-size: 19px;
-        align-self: center;
     }
 }
 
@@ -154,15 +135,10 @@ header{
     .buttons-container{
         flex:1;
     }
-
-    .search-container{
-        flex: 2;
-    }
-
+    
     .tutorials-contact{
         flex:1;
+        justify-content: flex-end;
     }
-    .tutorials-contact li:first-child{
-        display: flex;
-    }
+
 }

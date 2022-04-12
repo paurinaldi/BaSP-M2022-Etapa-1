@@ -3,8 +3,8 @@ footer{
     flex-direction: column;
     width: 100%;
     padding: 16px 0px;
-    text-align: center;
     font-size: 9px;
+    text-align: center;
 }
 
 footer a{
@@ -19,8 +19,8 @@ footer a:visited{
 }
 
 .footer-icons i{
-    text-align: center;
     margin-bottom: 1%;
+    text-align: center;
 }
 
 
