@@ -22,6 +22,10 @@ On this week we took the HTML structure we worked on for the landing page, creat
 ## Week 04: Flexbox
 This week's assignment is to make our landing page into a responsive page, using Flexbox and taking a mobile-first design approach. 
 
+## Week 05: JavaScript practice
+We did exercises to get familiar with JavaScript basics. 
+You can check them out by visiting https://paurinaldi.github.io/BaSP-M2022-Etapa-1/Semana-05/ and inspecting.
+
 ```
 Project Status: Developing
 Made by: Paula Rinaldi
