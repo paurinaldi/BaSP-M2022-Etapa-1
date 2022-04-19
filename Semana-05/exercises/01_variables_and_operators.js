@@ -22,6 +22,5 @@ console.log('Solution01_b:', sumOfStrings);
 var stringLength1 = 'Hi, how ';
 var stringLenght2 = 'are you?';
 var sumOfLenght = stringLength1.length + stringLenght2.length;
-
 console.log('Solution01_c:', sumOfLenght);
 
