@@ -5,14 +5,14 @@
 
 var fiveWords = ['hello', 'these', 'are', 'five', 'words'];
 for (var i=0; i <= fiveWords.length -1; i++){
-	alert(fiveWords[i]);
+	alert('Solution05_a: ' + fiveWords[i]);
 }
 
 //b. Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una alerta por cada palabra
 //modificada.
 
 for (var i=0; i <= fiveWords.length -1; i++){
-    alert(fiveWords[i].substring(0,1).toUpperCase() + fiveWords[i].substring(1));
+	alert('Solution05_b: ' + fiveWords[i].substring(0,1).toUpperCase() + fiveWords[i].substring(1));
 }
 
 //c. Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto a) recorrerlo con un
@@ -21,9 +21,9 @@ for (var i=0; i <= fiveWords.length -1; i++){
 
 var sentence = '';
 for (var i=0; i <= fiveWords.length -1; i++){
-    sentence= sentence + ' ' +  fiveWords[i];
+	sentence= sentence + ' ' +  fiveWords[i];
 }
-alert(sentence)
+alert('Solution05_c: ' + sentence);
 
 //d. Crear una array vacío y con un bucle for de 10 repeticiones. Llenar el array con el número de la repetición,
 // es decir que al final de la ejecución del bucle for debería haber 10 elementos dentro del array, desde el número 0
@@ -31,6 +31,6 @@ alert(sentence)
 
 var emptyArray = [];
 for (var i=0; i < 10; i++){
-    emptyArray.push(i);
+	emptyArray.push(i);
 }
-console.log('Solution05_d:', emptyArray);
+console.log('Solution05_d: ' + emptyArray);
