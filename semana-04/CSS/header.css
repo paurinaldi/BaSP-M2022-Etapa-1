@@ -93,8 +93,6 @@ header{
     padding: 0px 15px;
 }
 
-
-
 @media screen and (min-width: 768px){
     header{
         justify-content: space-between;
