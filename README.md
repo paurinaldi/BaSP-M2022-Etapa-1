@@ -26,6 +26,10 @@ This week's assignment is to make our landing page into a responsive page, using
 We did exercises to get familiar with JavaScript basics. 
 You can check them out by visiting https://paurinaldi.github.io/BaSP-M2022-Etapa-1/Semana-05/ and inspecting.
 
+## Week 06: Log In and Employee's Sign Up pages 
+We coded the html and css of the log in and the employee's sign up pages of the app, as well as linked them together with the landing page. We also started applying JavaScript to validate the forms.
+You can check this week's work out by visiting https://paurinaldi.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
+
 ```
 Project Status: Developing
 Made by: Paula Rinaldi

@@ -137,13 +137,14 @@ header{
         height: 100%;
         width: 100%;
     }
+
 }
 
 @media screen and (min-width: 1024px){
     .buttons-container{
         flex:1;
     }
-    
+
     .tutorials-contact{
         flex:1;
         justify-content: flex-end;

@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="../styles/reset.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/landing.css">
-  <link rel="stylesheet" href="../styles/login.css">
   <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/sign-up.css">
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="../javascript/login.js"></script>
   <title>Trackgenix</title>
 </head>
 <body>
@@ -38,7 +37,7 @@
         <a href="index.html">Home</a>
       </button>
       <button class="button">
-        <a href="sign-up.html">Sign Up</a>
+        <a href="login.html">Sign In</a>
       </button>
     </div>
   </header>
@@ -50,22 +49,46 @@
         <h2>DATA MANAGMENT</h2>
       </div>
     </div>
-    <form class="login-signup-form" id="login-form">
-      <h3>Login</h3>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-      <span class="error-msg">Wrong Email</span>
-      <label for="pwd">Password:</label>
-      <input type="password" id="pwd" name="pwd">
-      <span class="error-msg">Wrong Password</span>
-      <div class="remember-forgotpw-container">
-        <div class="check-remember">
-        <input type="checkbox" value="remember-checkbox">
-        <label>Remember me</label>
-        </div>
-        <button id="forgotpw-button">Forgot your password?</button>
+    <form class="login-signup-form" id="signup-form"> 
+      <h3>Sign Up</h3>
+      <div id='form-1'>
+        <label>Name:</label>
+        <input type="text" placeholder="Write your name">
+        <span class="error-msg">Must contain more than 3 letters</span>
+        <label>Last Name:</label>
+        <input type="text" placeholder="Write your last name">
+        <span class="error-msg">Must contain more than 3 letters</span>
+        <label>Document:</label>
+        <input type="number" placeholder="Write your document number">
+        <span class="error-msg">Must contain at least 8 numbers</span>
+        <label>Date of Birth:</label>
+        <input type="date" placeholder="Write your birth date">
+        <span class="error-msg">Invalid date</span>
+        <label>Phone Number:</label>
+        <input type="number" placeholder="Write your phone number">
+        <span class="error-msg">Must contain 10 numbers</span>
+        <label>Direction:</label>
+        <input type="text" placeholder="Write your direction">
+        <span class="error-msg">Must be at least 5 characters long with letters, numbers, and space.</span>
       </div>
-      <button class="login-signup-button">Login</button>
+      <div id="form-2">
+        <label>Location:</label>
+        <input type="text" placeholder="Write your location">
+        <span class="error-msg">Must contain at least 4 numbers</span>
+        <label>Postal Code:</label>
+        <input type="number" placeholder="Write your postal code">
+        <span class="error-msg">Must contain 4 or 5 numbers</span>
+        <label>Email:</label>
+        <input type="email" placeholder="Write your email">
+        <span class="error-msg">Invalid Email</span>
+        <label>Password:</label>
+        <input type="password" placeholder="Write your password">
+        <span class="error-msg">Must be at least 8 characters long, containing numbers and letters</span>
+        <label>Repeat password:</label>
+        <input type="password" placeholder="Confirm your password">
+        <span class="error-msg">Must be at least 8 characters long, containing numbers and letters</span>
+        <button class="login-signup-button">Sign up</button>
+      <div>
     </form>
   </main>
   <footer>
