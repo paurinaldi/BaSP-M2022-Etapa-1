@@ -1,0 +1,152 @@
+body{
+    box-sizing: border-box;
+    font-family: "Roboto", Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 6%;
+    background-color: #50A780;
+}
+
+.menu-burger{
+    margin-left: 5px;
+}
+
+.burger{
+    background-color: #50A780;
+    border: none;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.tutorials-contact{
+    display: none;
+}
+
+.tutorials-contact ul{
+    display: flex;
+    align-self: center;
+
+}
+
+.tutorials-contact a{
+    font-size: 17px;
+    text-decoration: none;
+    color: #000;
+}
+
+.tutorials-contact li:first-child{
+    padding-right: 6px;
+}
+
+.tutorials-contact li:last-child{
+    border-left: #000 1px solid;
+    padding-left: 6px;
+}
+
+.tutorials-contact a:visited{
+    color: #000;
+}
+
+.search-container{
+    display: none;
+}
+
+.search-bar{
+    width: 100%;
+    height: 75%;
+    padding-left: 20px;
+    background-image: url(https://icon-library.com/images/search-magnifying-glass-icon/search-magnifying-glass-icon-3.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-size: 15px;
+    border: none;
+    border-radius: 200px;
+    font-size: 20px;
+}
+
+.search-icon {
+    order: 4;
+    margin-right: 2%;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.buttons-container{
+    display: flex;
+    height: 100%;
+}
+
+.button{
+    margin:5px;
+    background-color: #fff;
+    border: none;
+    border-radius: 200px;
+    font-size: 19px;
+    padding: 0px 15px;
+}
+
+.button a{
+    text-decoration: none;
+    color: #000
+}
+
+.button a:visited{
+    text-decoration: none;
+    color: #000
+}
+
+@media screen and (min-width: 768px){
+    header{
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .tutorials-contact{
+        display:flex;
+        height: 100%;
+        margin-left: 3%;
+    }
+
+    .search-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex:2;
+        height: 100%;
+    }
+
+    .search-bar{
+        width: 65%;
+    }
+
+    .search-icon{
+        display: none;
+    }
+
+    .buttons-container{
+        flex:1.5;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .buttons-container{
+        flex:1;
+    }
+    
+    .tutorials-contact{
+        flex:1;
+        justify-content: flex-end;
+    }
+
+}
