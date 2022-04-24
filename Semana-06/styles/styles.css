@@ -33,6 +33,10 @@ form h3{
   visibility: hidden;
 }
 
+.invalid-input{
+  background-color: #F13312;
+}
+
 label{
   color:#373867;
 }
