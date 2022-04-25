@@ -20,34 +20,50 @@ function validateEmail(input){
 
 window.onload = function(){
 
-  var email = document.getElementById('email');
   var errorMessage = document.getElementsByClassName('error-msg');
+  var email = document.getElementById('email');
   var errorMail = errorMessage[0];
-  var password = document.getElementById('pwd');
-  var errorPw = errorMessage[1];
 
-  email.addEventListener('blur',function(){
-    if (validateEmail(email.value) === false){
+  function showMailErrror(e){
+    if (validateEmail(email.value) == false){
       errorMail.style.visibility = 'visible';
       email.classList = 'invalid-input';
     }
-  });
+  }
+  email.addEventListener('blur', showMailErrror);
 
-  email.addEventListener('focus', function(){
+  function hideMailError(e){
     errorMail.style.visibility = 'hidden';
     email.classList -= 'invalid-input';
-  });
+  }
+  email.addEventListener('focus', hideMailError);
 
-  password.addEventListener('blur', function(){
+  var password = document.getElementById('pwd');
+  var errorPw = errorMessage[1];
+
+  function showPwError(e){
     if (validateNumbersAndLetters(password.value) == false){
       errorPw.style.visibility = 'visible';
       password.classList = 'invalid-input';
     }
-  });
-
-  password.addEventListener('focus', function(){
+  }
+  password.addEventListener('blur', showPwError);
+  
+  function hidePwError(e){
     errorPw.style.visibility = 'hidden';
     password.classList -= 'invalid-input';
-  })
+  }
+  password.addEventListener('focus', hidePwError);
 
-} 
+  var loginButton = document.getElementById('login');
+
+  function buttonAlerts(e){
+    if(validateNumbersAndLetters(password.value)&&validateEmail(email.value) == true){
+      alert('Email:' + email.value + ' Password:' + password.value);
+    } else {
+      alert(errorMail.textContent + ' ' + 'and/or' + ' ' + errorPw.textContent);
+    }
+  }
+
+  loginButton.addEventListener('click', buttonAlerts);
+}
