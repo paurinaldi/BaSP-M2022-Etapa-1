@@ -11,29 +11,36 @@ function validateNumbersAndLetters(string){
     }
   }
   return hasLetter && hasNumber;
-}
+};
 
 function validateEmail(input){
     var regExEmail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
     return regExEmail.test(input);
-}
+};
+
+var emailMessage = '';
+var passwordMessage = '';
+
 
 window.onload = function(){
 
   var errorMessage = document.getElementsByClassName('error-msg');
   var email = document.getElementById('email');
-  var errorMail = errorMessage[0];
+  var errorEmail = errorMessage[0];
 
-  function showMailErrror(e){
+  function showMailError(e){
     if (validateEmail(email.value) == false){
-      errorMail.style.visibility = 'visible';
+      errorEmail.style.visibility = 'visible';
       email.classList = 'invalid-input';
+      emailMessage = errorEmail.textContent;
+    }else{
+      emailMessage = email.value;
     }
   }
-  email.addEventListener('blur', showMailErrror);
+  email.addEventListener('blur', showMailError);
 
   function hideMailError(e){
-    errorMail.style.visibility = 'hidden';
+    errorEmail.style.visibility = 'hidden';
     email.classList -= 'invalid-input';
   }
   email.addEventListener('focus', hideMailError);
@@ -45,6 +52,9 @@ window.onload = function(){
     if (validateNumbersAndLetters(password.value) == false){
       errorPw.style.visibility = 'visible';
       password.classList = 'invalid-input';
+      passwordMessage = errorPw.textContent;
+    }else{
+      passwordMessage = password.value;
     }
   }
   password.addEventListener('blur', showPwError);
@@ -57,13 +67,11 @@ window.onload = function(){
 
   var loginButton = document.getElementById('login');
 
-  function buttonAlerts(e){
-    if(validateNumbersAndLetters(password.value)&&validateEmail(email.value) == true){
-      alert('Email:' + email.value + ' Password:' + password.value);
-    } else {
-      alert(errorMail.textContent + ' ' + 'and/or' + ' ' + errorPw.textContent);
-    }
+  loginButton.addEventListener('click', showValidationsContent);
+
+  function showValidationsContent(e){
+    var alertMessage = 'Email: ' + emailMessage + '\nPassword: ' + passwordMessage;
+    alert(alertMessage);
   }
 
-  loginButton.addEventListener('click', buttonAlerts);
-}
+};

@@ -58,6 +58,17 @@ function validateSignUpEmail(input){
   var regExEmail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
   return regExEmail.test(input);
 }
+var nameMessage = '';
+var lastNameMessage = '';
+var docNumberMessage = '';
+var dateMessage = '';
+var phoneMessage = '';
+var directionMessage = '';
+var locationMessage = '';
+var postalCodeMessage = '';
+var signUpEmailMessage = '';
+var signUpPasswordMessage = '';
+var confirmPasswordMessage = '';
 
 window.onload = function(){
 
@@ -69,6 +80,9 @@ window.onload = function(){
     if(!validateJustLetters(name.value) || !validateStringLength (name.value, 3) || validateJustNumbers(name.value)){
       nameError.style.visibility = 'visible';
       name.classList = 'invalid-input';
+      nameMessage = nameError.textContent;
+    }else{
+      nameMessage = name.value;
     } 
   }
   name.addEventListener('blur', showNameErrors);
@@ -87,6 +101,9 @@ window.onload = function(){
     validateJustNumbers(lastName.value)){
       lastNameError.style.visibility = 'visible';
       lastName.classList = 'invalid-input';
+      lastNameMessage = lastNameError.textContent;
+    }else{
+      lastNameMessage = lastName.value;
     }
   }
   lastName.addEventListener('blur', showLastNameErrors);
@@ -100,13 +117,15 @@ window.onload = function(){
   var docNumber = document.getElementById('document');
   var docError = errorMessageSignUp[2];
 
-
   function showDocErrors(e){
     if(!validateJustNumbers(docNumber.value) || !validateStringLength(docNumber.value, 7) ||
      validateJustLetters(docNumber.value)){
       docError.style.visibility = 'visible';
       docNumber.classList = 'invalid-input';
-    } 
+      docNumberMessage = docError.textContent;
+    } else {
+      docNumberMessage = docNumber.value;
+    }
   }
   docNumber.addEventListener('blur', showDocErrors);
 
@@ -116,6 +135,11 @@ window.onload = function(){
   }
   docNumber.addEventListener('focus', hideDocErrors);
 
+  var date = document.getElementById('date');
+  var dateError = errorMessageSignUp[3];
+
+
+
   var phone = document.getElementById('phone');
   var phoneError = errorMessageSignUp[4];
 
@@ -123,6 +147,9 @@ window.onload = function(){
     if(!validateJustNumbers(phone.value) || validateJustLetters(phone.value) || phone.value.length != 10){
       phoneError.style.visibility = 'visible';
       phone.classList = 'invalid-input';
+      phoneMessage = phoneError.textContent;
+    } else {
+      phoneMessage = phone.value;
     } 
   }
   phone.addEventListener('blur', showPhoneErrors);
@@ -140,6 +167,9 @@ window.onload = function(){
     if(!validateTextNumberAndSpaces(direction.value) || !validateStringLength (direction.value, 4)){
       directionError.style.visibility = 'visible';
       direction.classList = 'invalid-input';
+      directionMessage = directionError.textContent;
+    } else {
+      directionMessage = direction.value;
     }
   }
   direction.addEventListener('blur', showDirectionErrors);
@@ -157,6 +187,9 @@ window.onload = function(){
     if(!validateJustLetters(location.value) || !validateJustNumbers(location.value) || !(countLetters(location.value) > 3)){
       locationError.style.visibility = 'visible';
       location.classList = 'invalid-input';
+      locationMessage = locationError.textContent;
+    } else {
+      locationMessage = location.value;
     }
   }
   location.addEventListener('blur', showLocationErrors);
@@ -175,6 +208,9 @@ window.onload = function(){
     postalCode.value.length > 5){
       postalCodeError.style.visibility = 'visible';
       postalCode.classList = 'invalid-input';
+      postalCodeMessage = postalCodeError.textContent;
+    } else {
+      postalCodeMessage = postalCode.value;
     }
   }
   postalCode.addEventListener('blur', showPostalCodeErrors);
@@ -192,6 +228,9 @@ window.onload = function(){
     if(!validateSignUpEmail(signUpEmail.value)){
       signUpEmailError.style.visibility = 'visible';
       signUpEmail.classList = 'invalid-input';
+      signUpEmailMessage = signUpEmailError.textContent;
+    } else {
+      signUpEmailMessage = signUpEmail.value;
     }
   }
   signUpEmail.addEventListener('blur', showSignUpEmailErrors);
@@ -210,6 +249,9 @@ window.onload = function(){
     !validateStringLength(signUpPassword.value, 7)){
       signUpPasswordError.style.visibility = 'visible';
       signUpPassword.classList = 'invalid-input';
+      signUpPasswordMessage = signUpPasswordError.textContent;
+    } else {
+      signUpPasswordMessage = signUpPassword.value;
     }
   }
   signUpPassword.addEventListener('blur', showSignUpPasswordErrors);
@@ -228,6 +270,9 @@ window.onload = function(){
     !validateStringLength(confirmPassword.value, 7)){
       confirmPasswordError.style.visibility = 'visible';
       confirmPassword.classList = 'invalid-input';
+      confirmPasswordMessage = confirmPasswordError.textContent;
+    } else {
+      confirmPasswordMessage = confirmPassword.value;
     }
   }
   confirmPassword.addEventListener('blur', showConfirmPasswordErrors);
@@ -238,4 +283,15 @@ window.onload = function(){
   }
   confirmPassword.addEventListener('focus', hideConfirmPasswordErrors);
   
+  var signUpButton = document.getElementById('signup-button');
+  signUpButton.addEventListener('click', showValidationMessages);
+
+  function showValidationMessages(e){
+    var signUpAlert = 'Name: ' + nameMessage + '\nLast Name: ' + lastNameMessage + '\nDocument: ' + docNumberMessage + 
+    '\naca iria lo de date' + '\nPhone: ' + phoneMessage + '\nDirection: ' + directionMessage + '\nLocation: ' +
+    locationMessage + '\nPostal Code: ' + postalCodeMessage + '\nEmail: ' + signUpEmailMessage + '\nPassword: ' +
+    signUpPasswordMessage + '\nRepeat Password: ' + confirmPasswordMessage;
+    alert(signUpAlert);
+  }
+
 }
