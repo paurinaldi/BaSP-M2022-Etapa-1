@@ -1,5 +1,3 @@
-
-
 #forgotpw-button{
   border: none;
   background-color: #fff;
@@ -15,11 +13,12 @@
 }
 
 .remember-forgotpw-container label{
+  margin-left: 1%;
+  padding: 0px;
   font-size: 75%;
   font-weight: bold;
-  padding: 0px;
-  margin-left: 1%;
 }
+
 .remember-forgotpw-container input{
   margin: 0%;
 }

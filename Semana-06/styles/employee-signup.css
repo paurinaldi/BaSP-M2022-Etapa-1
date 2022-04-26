@@ -1,8 +1,8 @@
 
 #form-1, #form-2{
-  width: 100%;
   display: flex;
   flex-flow: column;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px){
@@ -14,9 +14,9 @@
 
 @media screen and (min-width: 1024px){
   #signup-form{
-    width: 90%;
     flex-flow: row wrap;
     justify-content: space-around;
+    width: 90%;
   }
 
   #form-1, #form-2{

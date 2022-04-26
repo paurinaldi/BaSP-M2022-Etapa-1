@@ -1,29 +1,40 @@
+var nameMessage = '';
+var lastNameMessage = '';
+var docNumberMessage = '';
+var dateMessage = '';
+var phoneMessage = '';
+var directionMessage = '';
+var locationMessage = '';
+var postalCodeMessage = '';
+var signUpEmailMessage = '';
+var signUpPasswordMessage = '';
+var confirmPasswordMessage = '';
 
-function validateJustLetters (string){
+function validateJustLetters(string) {
   var notANumber = false;
-  for (var i = 0; i < string.length; i++){
+  for (var i = 0; i < string.length; i++) {
     var nameElement = string[i];
-    if(isNaN(nameElement)){
+    if (isNaN(nameElement)) {
       notANumber = true;
     }
   }
   return notANumber;
 }
 
-function validateJustNumbers (string){
+function validateJustNumbers(string) {
   var isNumber = false;
-  for (var i = 0; i < string.length; i++){
+  for (var i = 0; i < string.length; i++) {
     var docElement = string[i];
-    if(!isNaN(docElement)){
+    if (!isNaN(docElement)) {
       isNumber = true;
     }
   }
   return isNumber;
 }
 
-function validateStringLength (string, number){
+function validateStringLength(string, number) {
   var correctLength = false;
-  if(string.length > number){
+  if (string.length > number) {
     correctLength = true;
   }
   return correctLength;
@@ -54,72 +65,80 @@ function countLetters(string) {
   return letters;
 }
 
-function validateSignUpEmail(input){
+function validateSignUpEmail(input) {
   var regExEmail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
   return regExEmail.test(input);
 }
-var nameMessage = '';
-var lastNameMessage = '';
-var docNumberMessage = '';
-var dateMessage = '';
-var phoneMessage = '';
-var directionMessage = '';
-var locationMessage = '';
-var postalCodeMessage = '';
-var signUpEmailMessage = '';
-var signUpPasswordMessage = '';
-var confirmPasswordMessage = '';
+
+function validateDate(input) {
+  var actualDay = new Date();
+  var inputDate = new Date(input);
+  if (inputDate > actualDay) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 window.onload = function(){
-
-  var errorMessageSignUp = document.getElementsByClassName('error-msg');
-  var nameError = errorMessageSignUp[0];
+  var nameError = document.getElementById('name-error');
   var name = document.getElementById('name');
+  var lastName = document.getElementById('last-name');
+  var lastNameError = document.getElementById('lastname-error');
+  var docNumber = document.getElementById('document');
+  var docError = document.getElementById('document-error');
+  var date = document.getElementById('date');
+  var dateError = document.getElementById('date-error');
+  var phone = document.getElementById('phone');
+  var phoneError = document.getElementById('phone-error');
+  var direction = document.getElementById('direction');
+  var directionError = document.getElementById('direction-error');
+  var location = document.getElementById('location');
+  var locationError = document.getElementById('location-error');
+  var postalCode = document.getElementById('postal-code');
+  var postalCodeError = document.getElementById('postalcode-error');
+  var signUpEmail = document.getElementById('signup-email');
+  var signUpEmailError = document.getElementById('signup-email-error');
+  var signUpPassword = document.getElementById('pw');
+  var signUpPasswordError = document.getElementById('pw-error');
+  var confirmPassword = document.getElementById('confirm-pw');
+  var confirmPasswordError = document.getElementById('confirm-pw-error');
+  var signUpButton = document.getElementById('signup-button');
  
-  function showNameErrors(e){
-    if(!validateJustLetters(name.value) || !validateStringLength (name.value, 3) || validateJustNumbers(name.value)){
+  function showNameErrors() {
+    if (!validateJustLetters(name.value) || !validateStringLength (name.value, 3) || validateJustNumbers(name.value)) {
       nameError.style.visibility = 'visible';
       name.classList = 'invalid-input';
       nameMessage = nameError.textContent;
-    }else{
+    } else {
       nameMessage = name.value;
     } 
   }
-  name.addEventListener('blur', showNameErrors);
 
-  function hideNameErrors(e){
+  function hideNameErrors() {
     nameError.style.visibility = 'hidden';
     name.classList -= 'invalid-input';
   }
-  name.addEventListener('focus', hideNameErrors);
 
-  var lastName = document.getElementById('last-name');
-  var lastNameError = errorMessageSignUp[1];
-
-  function showLastNameErrors(e){
-    if(!validateJustLetters(lastName.value) || !validateStringLength (lastName.value, 3) ||
-    validateJustNumbers(lastName.value)){
+  function showLastNameErrors() {
+    if (!validateJustLetters(lastName.value) || !validateStringLength (lastName.value, 3) ||
+    validateJustNumbers(lastName.value)) {
       lastNameError.style.visibility = 'visible';
       lastName.classList = 'invalid-input';
       lastNameMessage = lastNameError.textContent;
-    }else{
+    } else {
       lastNameMessage = lastName.value;
     }
   }
-  lastName.addEventListener('blur', showLastNameErrors);
-
-  function hideLastNameErrors(e){
+  
+  function hideLastNameErrors() {
     lastNameError.style.visibility = 'hidden';
     lastName.classList -= 'invalid-input';
   }
-  lastName.addEventListener('focus', hideLastNameErrors);
 
-  var docNumber = document.getElementById('document');
-  var docError = errorMessageSignUp[2];
-
-  function showDocErrors(e){
-    if(!validateJustNumbers(docNumber.value) || !validateStringLength(docNumber.value, 7) ||
-     validateJustLetters(docNumber.value)){
+  function showDocErrors() {
+    if (!validateJustNumbers(docNumber.value) || !validateStringLength(docNumber.value, 7) ||
+     validateJustLetters(docNumber.value)) {
       docError.style.visibility = 'visible';
       docNumber.classList = 'invalid-input';
       docNumberMessage = docError.textContent;
@@ -127,24 +146,29 @@ window.onload = function(){
       docNumberMessage = docNumber.value;
     }
   }
-  docNumber.addEventListener('blur', showDocErrors);
 
-  function hideDocErrors(e){
+  function hideDocErrors() {
     docError.style.visibility = 'hidden';
     docNumber.classList -= 'invalid-input';
   }
-  docNumber.addEventListener('focus', hideDocErrors);
 
-  var date = document.getElementById('date');
-  var dateError = errorMessageSignUp[3];
+  function showDateErrors() {
+    if (!validateDate(date.value)) {
+      dateError.style.visibility = 'visible';
+      date.classList = 'invalid-input';
+      dateMessage = dateError.textContent;
+    } else {
+      dateMessage = date.value;
+    }
+  }
 
+  function hideDateErrors() {
+    dateError.style.visibility = 'hidden';
+    date.classList -= 'invalid-input';
+  }
 
-
-  var phone = document.getElementById('phone');
-  var phoneError = errorMessageSignUp[4];
-
-  function showPhoneErrors(e){
-    if(!validateJustNumbers(phone.value) || validateJustLetters(phone.value) || phone.value.length != 10){
+  function showPhoneErrors() {
+    if (!validateJustNumbers(phone.value) || validateJustLetters(phone.value) || phone.value.length != 10) {
       phoneError.style.visibility = 'visible';
       phone.classList = 'invalid-input';
       phoneMessage = phoneError.textContent;
@@ -152,19 +176,14 @@ window.onload = function(){
       phoneMessage = phone.value;
     } 
   }
-  phone.addEventListener('blur', showPhoneErrors);
 
-  function hidePhoneErrors(e){
+  function hidePhoneErrors() {
     phoneError.style.visibility = 'hidden';
     phone.classList -= 'invalid-input';
   }
-  phone.addEventListener('focus', hidePhoneErrors);
 
-  var direction = document.getElementById('direction');
-  var directionError = errorMessageSignUp[5];
-
-  function showDirectionErrors(e){
-    if(!validateTextNumberAndSpaces(direction.value) || !validateStringLength (direction.value, 4)){
+  function showDirectionErrors() {
+    if (!validateTextNumberAndSpaces(direction.value) || !validateStringLength (direction.value, 4)) {
       directionError.style.visibility = 'visible';
       direction.classList = 'invalid-input';
       directionMessage = directionError.textContent;
@@ -172,19 +191,15 @@ window.onload = function(){
       directionMessage = direction.value;
     }
   }
-  direction.addEventListener('blur', showDirectionErrors);
 
-  function hideDirectionErrors(e){
+  function hideDirectionErrors() {
     directionError.style.visibility = 'hidden';
     direction.classList -= 'invalid-input';
   }
-  direction.addEventListener('focus', hideDirectionErrors);
 
-  var location = document.getElementById('location');
-  var locationError = errorMessageSignUp[6];
-
-  function showLocationErrors(e){
-    if(!validateJustLetters(location.value) || !validateJustNumbers(location.value) || !(countLetters(location.value) > 3)){
+  function showLocationErrors() {
+    if (!validateJustLetters(location.value) || !validateJustNumbers(location.value) ||
+     !(countLetters(location.value) > 3)) {
       locationError.style.visibility = 'visible';
       location.classList = 'invalid-input';
       locationMessage = locationError.textContent;
@@ -192,20 +207,15 @@ window.onload = function(){
       locationMessage = location.value;
     }
   }
-  location.addEventListener('blur', showLocationErrors);
 
-  function hideLocationErrors(e){
+  function hideLocationErrors() {
     locationError.style.visibility = 'hidden';
     location.classList -= 'invalid-input';
   }
-  location.addEventListener('focus', hideLocationErrors);
 
-  var postalCode = document.getElementById('postal-code');
-  var postalCodeError = errorMessageSignUp[7];
-
-  function showPostalCodeErrors(e){
-    if(!validateJustNumbers(postalCode.value) || validateJustLetters(postalCode.value) || postalCode.value.length < 4 || 
-    postalCode.value.length > 5){
+  function showPostalCodeErrors() {
+    if (!validateJustNumbers(postalCode.value) || validateJustLetters(postalCode.value) || postalCode.value.length < 4 || 
+    postalCode.value.length > 5) {
       postalCodeError.style.visibility = 'visible';
       postalCode.classList = 'invalid-input';
       postalCodeMessage = postalCodeError.textContent;
@@ -213,18 +223,13 @@ window.onload = function(){
       postalCodeMessage = postalCode.value;
     }
   }
-  postalCode.addEventListener('blur', showPostalCodeErrors);
 
-  function hidePostalCodeErrors(e){
+  function hidePostalCodeErrors() {
     postalCodeError.style.visibility = 'hidden';
     postalCode.classList -= 'invalid-input';
   }
-  postalCode.addEventListener('focus', hidePostalCodeErrors);
 
-  var signUpEmail = document.getElementById('signup-email')
-  var signUpEmailError = errorMessageSignUp[8];
-
-  function showSignUpEmailErrors(e){
+  function showSignUpEmailErrors() {
     if(!validateSignUpEmail(signUpEmail.value)){
       signUpEmailError.style.visibility = 'visible';
       signUpEmail.classList = 'invalid-input';
@@ -233,20 +238,15 @@ window.onload = function(){
       signUpEmailMessage = signUpEmail.value;
     }
   }
-  signUpEmail.addEventListener('blur', showSignUpEmailErrors);
 
-  function hideSignUpEmailErrors(e){
+  function hideSignUpEmailErrors() {
     signUpEmailError.style.visibility = 'hidden';
     signUpEmail.classList -= 'invalid-input';
   }
-  signUpEmail.addEventListener('focus', hideSignUpEmailErrors);
 
-  var signUpPassword = document.getElementById('pw');
-  var signUpPasswordError = errorMessageSignUp[9];
-
-  function showSignUpPasswordErrors(e){
-    if(!validateJustLetters(signUpPassword.value) || !validateJustNumbers(signUpPassword.value) || 
-    !validateStringLength(signUpPassword.value, 7)){
+  function showSignUpPasswordErrors() {
+    if (!validateJustLetters(signUpPassword.value) || !validateJustNumbers(signUpPassword.value) || 
+    !validateStringLength(signUpPassword.value, 7)) {
       signUpPasswordError.style.visibility = 'visible';
       signUpPassword.classList = 'invalid-input';
       signUpPasswordMessage = signUpPasswordError.textContent;
@@ -254,20 +254,15 @@ window.onload = function(){
       signUpPasswordMessage = signUpPassword.value;
     }
   }
-  signUpPassword.addEventListener('blur', showSignUpPasswordErrors);
 
-  function hideSignUpPasswordErrors(e){
+  function hideSignUpPasswordErrors () {
     signUpPasswordError.style.visibility = 'hidden';
     signUpPassword.classList -= 'invalid-input';
   }
-  signUpPassword.addEventListener('focus', hideSignUpPasswordErrors);
 
-  var confirmPassword = document.getElementById('confirm-pw');
-  var confirmPasswordError = errorMessageSignUp[10];
-
-  function showConfirmPasswordErrors(e){
-    if(!validateJustLetters(confirmPassword.value) || !validateJustNumbers(confirmPassword.value) || 
-    !validateStringLength(confirmPassword.value, 7)){
+  function showConfirmPasswordErrors() {
+    if (!validateJustLetters(confirmPassword.value) || !validateJustNumbers(confirmPassword.value) || 
+    !validateStringLength(confirmPassword.value, 7)) {
       confirmPasswordError.style.visibility = 'visible';
       confirmPassword.classList = 'invalid-input';
       confirmPasswordMessage = confirmPasswordError.textContent;
@@ -275,23 +270,41 @@ window.onload = function(){
       confirmPasswordMessage = confirmPassword.value;
     }
   }
-  confirmPassword.addEventListener('blur', showConfirmPasswordErrors);
 
-  function hideConfirmPasswordErrors(e){
+  function hideConfirmPasswordErrors() {
     confirmPasswordError.style.visibility = 'hidden';
     confirmPassword.classList -= 'invalid-input';
   }
-  confirmPassword.addEventListener('focus', hideConfirmPasswordErrors);
-  
-  var signUpButton = document.getElementById('signup-button');
-  signUpButton.addEventListener('click', showValidationMessages);
 
-  function showValidationMessages(e){
+  function showValidationMessages() {
     var signUpAlert = 'Name: ' + nameMessage + '\nLast Name: ' + lastNameMessage + '\nDocument: ' + docNumberMessage + 
-    '\naca iria lo de date' + '\nPhone: ' + phoneMessage + '\nDirection: ' + directionMessage + '\nLocation: ' +
+    '\nDate: ' + dateMessage + '\nPhone: ' + phoneMessage + '\nDirection: ' + directionMessage + '\nLocation: ' +
     locationMessage + '\nPostal Code: ' + postalCodeMessage + '\nEmail: ' + signUpEmailMessage + '\nPassword: ' +
     signUpPasswordMessage + '\nRepeat Password: ' + confirmPasswordMessage;
     alert(signUpAlert);
   }
 
+  name.addEventListener('blur', showNameErrors);
+  name.addEventListener('focus', hideNameErrors);
+  lastName.addEventListener('blur', showLastNameErrors);
+  lastName.addEventListener('focus', hideLastNameErrors);
+  docNumber.addEventListener('blur', showDocErrors);
+  docNumber.addEventListener('focus', hideDocErrors);
+  date.addEventListener('blur', showDateErrors);
+  date.addEventListener('focus', hideDateErrors);
+  phone.addEventListener('blur', showPhoneErrors);
+  phone.addEventListener('focus', hidePhoneErrors);
+  direction.addEventListener('blur', showDirectionErrors);
+  direction.addEventListener('focus', hideDirectionErrors);
+  location.addEventListener('blur', showLocationErrors);
+  location.addEventListener('focus', hideLocationErrors);
+  postalCode.addEventListener('blur', showPostalCodeErrors);
+  postalCode.addEventListener('focus', hidePostalCodeErrors);
+  signUpEmail.addEventListener('blur', showSignUpEmailErrors);
+  signUpEmail.addEventListener('focus', hideSignUpEmailErrors);
+  signUpPassword.addEventListener('blur', showSignUpPasswordErrors);
+  signUpPassword.addEventListener('focus', hideSignUpPasswordErrors);
+  confirmPassword.addEventListener('blur', showConfirmPasswordErrors);
+  confirmPassword.addEventListener('focus', hideConfirmPasswordErrors);
+  signUpButton.addEventListener('click', showValidationMessages);
 }

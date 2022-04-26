@@ -1,21 +1,3 @@
-#login-signup-main{
-  width: 100%;
-}
-
-.login-signup-form{
-  border:none;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
-  margin: auto;
-  margin-bottom: 150px;
-}
-
-#logo-title{
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 150px;
-}
 
 form h3{
   margin-bottom: 60px;
@@ -26,29 +8,48 @@ form h3{
   color: #373867;
 }
 
-.error-msg{
-  font-size: 55%;
-  color: #F13312;
-  padding: 1% 0%;
-  visibility: hidden;
-}
-
-.invalid-input{
-  background-color: #F13312;
-}
-
 label{
   color:#373867;
 }
 
+#login-signup-main{
+  width: 100%;
+}
+
+#logo-title{
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.login-signup-form{
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 150px;
+  border:none;
+}
+
+.error-msg{
+  visibility: hidden;
+  padding: 1% 0%;
+  font-size: 55%;
+  color: #F13312;
+}
+
+.invalid-input{
+  background-color: #F1331270;
+}
+
 .login-signup-button{
+  align-self: center;
+  margin-top: 30%;
   width: 60%;
   padding: 5% 10%;
-  align-self: center;
-  background-color: #AACE9B;
-  color:#505168;
-  font-weight: bold;
   border: none;
   border-radius: 10px;
-  margin-top: 30%;
+  background-color: #AACE9B;
+  font-weight: bold;
+  color:#505168;
 }

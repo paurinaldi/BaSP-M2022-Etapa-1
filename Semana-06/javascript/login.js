@@ -1,77 +1,71 @@
-function validateNumbersAndLetters(string){
+var emailMessage = '';
+var passwordMessage = '';
+
+function validateNumbersAndLetters(string) {
   var hasNumber = false;
   var hasLetter = false;
   for (var i = 0; i < string.length; i++) {
-    const element = string[i];
-    if (isNaN(element)){
+    var element = string[i];
+    if (isNaN(element)) {
       hasLetter = true;
     }
-    if(!isNaN(element)){
+    if (!isNaN(element)) {
       hasNumber = true;
     }
   }
   return hasLetter && hasNumber;
 };
 
-function validateEmail(input){
+function validateEmail(input) {
     var regExEmail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
     return regExEmail.test(input);
 };
 
-var emailMessage = '';
-var passwordMessage = '';
-
-
-window.onload = function(){
-
-  var errorMessage = document.getElementsByClassName('error-msg');
+window.onload = function() {
   var email = document.getElementById('email');
-  var errorEmail = errorMessage[0];
+  var errorEmail = document.getElementById('email-error');
+  var password = document.getElementById('pwd');
+  var errorPw = document.getElementById('password-error');
+  var loginButton = document.getElementById('login');
 
-  function showMailError(e){
-    if (validateEmail(email.value) == false){
+  function showMailError() {
+    if (!validateEmail(email.value)) {
       errorEmail.style.visibility = 'visible';
       email.classList = 'invalid-input';
       emailMessage = errorEmail.textContent;
-    }else{
+    } else {
       emailMessage = email.value;
     }
   }
-  email.addEventListener('blur', showMailError);
 
-  function hideMailError(e){
+  function hideMailError() {
     errorEmail.style.visibility = 'hidden';
     email.classList -= 'invalid-input';
   }
-  email.addEventListener('focus', hideMailError);
 
-  var password = document.getElementById('pwd');
-  var errorPw = errorMessage[1];
-
-  function showPwError(e){
-    if (validateNumbersAndLetters(password.value) == false){
+  function showPwError() {
+    if (!validateNumbersAndLetters(password.value)) {
       errorPw.style.visibility = 'visible';
       password.classList = 'invalid-input';
       passwordMessage = errorPw.textContent;
-    }else{
+    } else {
       passwordMessage = password.value;
     }
   }
-  password.addEventListener('blur', showPwError);
   
-  function hidePwError(e){
+  function hidePwError() {
     errorPw.style.visibility = 'hidden';
     password.classList -= 'invalid-input';
   }
-  password.addEventListener('focus', hidePwError);
 
-  var loginButton = document.getElementById('login');
-
-  loginButton.addEventListener('click', showValidationsContent);
-
-  function showValidationsContent(e){
+  function showValidationsContent() {
     var alertMessage = 'Email: ' + emailMessage + '\nPassword: ' + passwordMessage;
     alert(alertMessage);
   }
 
+  email.addEventListener('blur', showMailError);
+  email.addEventListener('focus', hideMailError);
+  password.addEventListener('blur', showPwError);
+  password.addEventListener('focus', hidePwError);
+  loginButton.addEventListener('click', showValidationsContent);
 };
