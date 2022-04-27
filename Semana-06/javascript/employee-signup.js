@@ -19,7 +19,7 @@ function validateJustLetters(string) {
     }
   }
   return notANumber;
-}
+};
 
 function validateJustNumbers(string) {
   var isNumber = false;
@@ -30,7 +30,7 @@ function validateJustNumbers(string) {
     }
   }
   return isNumber;
-}
+};
 
 function validateStringLength(string, number) {
   var correctLength = false;
@@ -38,7 +38,7 @@ function validateStringLength(string, number) {
     correctLength = true;
   }
   return correctLength;
-}
+};
 
 function validateTextNumberAndSpaces(string) {
   var validation = false;
@@ -52,7 +52,7 @@ function validateTextNumberAndSpaces(string) {
     }
   }
   return validation;
-}
+};
 
 function countLetters(string) {
   var letters = 0;
@@ -63,21 +63,17 @@ function countLetters(string) {
     }
   }
   return letters;
-}
+};
 
 function validateSignUpEmail(input) {
   var regExEmail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
   return regExEmail.test(input);
-}
+};
 
 function validateDate(input) {
   var actualDay = new Date();
   var inputDate = new Date(input);
-  if (inputDate > actualDay) {
-    return false;
-  } else {
-    return true;
-  }
+  return inputDate <= actualDay;
 }
 
 window.onload = function(){
