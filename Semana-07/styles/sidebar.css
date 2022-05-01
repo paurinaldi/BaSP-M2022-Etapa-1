@@ -1,0 +1,109 @@
+aside{
+    display: none;
+    flex-direction: column;
+    width: 22%;
+    height: auto;
+    background-image: linear-gradient(#50A780, #fff);
+}
+
+aside h3{
+    width: 80%;
+    padding-bottom: 4%;
+    border-bottom: 2px solid #F13312;
+    font-size: 30px;
+}
+
+aside li{
+    width: 80%;
+    margin-top: 4%;
+    padding-bottom: 4%;
+    border-bottom: 1px solid #CECACA;
+}
+
+aside a{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+nav{
+    margin-top: 15%;
+    margin-left: 10%;
+    padding-right: 2%;
+}
+
+#sources-li{
+    margin-bottom: 55%;
+    border-bottom: none;
+}
+
+#border-between{
+    height: 60%;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.contact-info{
+    margin-left: 10%;
+    padding-right: 2%;
+}
+
+.contact-info p{
+    margin-top: 12.58px;
+    margin-bottom: 166.72px;
+    font-size: 22px;
+}
+
+.contact-info i{
+    font-size: 75%;
+    color: #505168;
+}
+
+.contact-info a{
+    margin-left: 5%;
+    font-size: 18px;
+}
+
+.mail{
+    display: flex;
+    width: 75%;
+    padding-bottom: 10%;
+    border-bottom: 1px solid #CECACA;
+}
+
+.direccion{
+    display: flex;
+    margin-top: 10%;
+    font-size: 18px;
+}
+
+.direccion label{
+    margin-left: 5%;
+}
+
+.get-system-info-button{
+    width: 95%;
+    margin-top: 100%;
+}
+
+.get-system-info-button button{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    background-color: #49A37B;
+    border: #000 1px solid;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+}
+
+@media screen and (min-width: 1024px){
+    aside{
+        display: flex;
+    }
+
+    #aside-main{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+}

@@ -1,0 +1,36 @@
+#forgotpw-button{
+  border: none;
+  background-color: #fff;
+  font-size: 55%;
+  font-weight: bold;
+  color: #373867;
+}
+
+.remember-forgotpw-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.remember-forgotpw-container label{
+  margin-left: 1%;
+  padding: 0px;
+  font-size: 75%;
+  font-weight: bold;
+}
+
+.remember-forgotpw-container input{
+  margin: 0%;
+}
+
+.check-remember{
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+}
+
+@media screen and (min-width: 768px){
+  #login-form{
+    width: 35%;
+  }
+}

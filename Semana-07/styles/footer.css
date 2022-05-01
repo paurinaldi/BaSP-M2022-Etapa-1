@@ -1,0 +1,42 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px 0px;
+    font-size: 9px;
+    text-align: center;
+}
+
+footer a{
+    margin-left: 1%;
+    text-decoration: none;
+    color: #505168;
+}
+
+footer a:visited{
+    text-decoration: none;
+    color: #505168;
+}
+
+.footer-icons i{
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+
+.span-container{
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+
+@media screen and (min-width: 768px){
+    footer{
+        font-size: 22px;
+    }
+
+    .footer-icons i{
+        font-size: 15px;
+    }
+}
