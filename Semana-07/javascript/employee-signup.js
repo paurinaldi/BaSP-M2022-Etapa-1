@@ -70,10 +70,20 @@ function validateSignUpEmail(input) {
   return regExEmail.test(input);
 };
 
-function validateDate(input) {
-  var actualDay = new Date();
-  var inputDate = new Date(input);
-  return inputDate <= actualDay;
+// function validateDate(input) {
+//   var actualDay = new Date();
+//   var inputDate = new Date(input);
+//   return inputDate <= actualDay;
+// }
+
+function validateDate(string){
+  var dateIsValid = false;
+  if (string.length == 10 && string[2] == '/' && string[5] == '/') {
+      var todayDate = new Date();
+      var birthdayDate = new Date(string.substring(6), string.substring(3, 5) - 1, string.substring(0, 2));
+      dateIsValid = todayDate > birthdayDate;
+    }
+  return dateIsValid;
 }
 
 window.onload = function(){
@@ -100,6 +110,7 @@ window.onload = function(){
   var confirmPassword = document.getElementById('confirm-pw');
   var confirmPasswordError = document.getElementById('confirm-pw-error');
   var signUpButton = document.getElementById('signup-button');
+  var signUpAlert;
  
   function showNameErrors() {
     if (!validateJustLetters(name.value) || !validateStringLength (name.value, 3) || validateJustNumbers(name.value)) {
@@ -272,13 +283,74 @@ window.onload = function(){
     confirmPassword.classList -= 'invalid-input';
   }
 
-  function showValidationMessages() {
-    var signUpAlert = 'Name: ' + nameMessage + '\nLast Name: ' + lastNameMessage + '\nDocument: ' + docNumberMessage + 
+  function showValidationMessages(event) {
+    event.preventDefault();
+    signUpAlert = 'Name: ' + nameMessage + '\nLast Name: ' + lastNameMessage + '\nDocument: ' + docNumberMessage + 
     '\nDate: ' + dateMessage + '\nPhone: ' + phoneMessage + '\nDirection: ' + directionMessage + '\nLocation: ' +
     locationMessage + '\nPostal Code: ' + postalCodeMessage + '\nEmail: ' + signUpEmailMessage + '\nPassword: ' +
     signUpPasswordMessage + '\nRepeat Password: ' + confirmPasswordMessage;
-    alert(signUpAlert);
+    submitRequest();
   }
+
+  function validateAllInputs(){
+    //no estoy segura de si esto conviene hacerlo con un if o simplemente retornar lo que hay entre ().
+    if(nameMessage == name.value && lastNameMessage == lastName.value && docNumberMessage == docNumber.value &&
+    dateMessage == date.value && phoneMessage == phone.value && directionMessage == direction.value &&
+    locationMessage == location.value && postalCodeMessage == postalCode.value && signUpEmailMessage ==
+    signUpEmail.value && signUpPasswordMessage == signUpPassword.value && confirmPasswordMessage ==
+    confirmPassword.value) {
+      return true;
+    }
+  }
+
+  function saveCredentials(){
+    localStorage.setItem('name', name.value);
+    localStorage.setItem('lastName', lastName.value);
+    localStorage.setItem('dni', docNumber.value);
+    localStorage.setItem('dob', date.value);
+    localStorage.setItem('phone', phone.value);
+    localStorage.setItem('adress', direction.value);
+    localStorage.setItem('city', location.value);
+    localStorage.setItem('zip', postalCode.value);
+    localStorage.setItem('email', signUpEmail.value);
+    localStorage.setItem('password', signUpPassword.value);
+    localStorage.setItem('confirmPassword', confirmPassword.value);
+  }
+
+  function submitRequest(){
+    if(validateAllInputs){
+      fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?' +
+        'name=' + name.value +
+        '&lastName=' + lastName.value +
+        '&dni=' + docNumber.value +
+        '&dob=' + date.value +
+        '&phone=' + phone.value +
+        '&address=' + direction.value +
+        '&city=' + location.value +
+        '&zip=' + postalCode.value +
+        '&email=' + signUpEmail.value +
+        '&password=' + signUpPassword.value +
+        '&confirmPassword =' + confirmPassword.value)
+        .then(function(response){
+          return response.json();
+        })
+        .then (function(data){
+          if(data.success == true){
+            var validatedAlert = data.msg + '\n' + signUpAlert;
+            alert(validatedAlert);
+            saveCredentials();
+          } else{
+            alert('Request rejected \n' + signUpAlert);
+          }
+        })
+    //     .catch (function(error){
+    //       alert(error.msg);
+    //     })
+    // } else {
+    //   alert('Request rejected \n' + signUpAlert)
+    // }
+      }
+    }
 
   name.addEventListener('blur', showNameErrors);
   name.addEventListener('focus', hideNameErrors);
