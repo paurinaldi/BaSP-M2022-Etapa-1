@@ -306,10 +306,10 @@ window.onload = function(){
   function saveCredentials(){
     localStorage.setItem('name', name.value);
     localStorage.setItem('lastName', lastName.value);
-    localStorage.setItem('dni', docNumber.value);
-    localStorage.setItem('dob', date.value);
+    localStorage.setItem('document', docNumber.value);
+    localStorage.setItem('date', date.value);
     localStorage.setItem('phone', phone.value);
-    localStorage.setItem('adress', direction.value);
+    localStorage.setItem('address', direction.value);
     localStorage.setItem('city', location.value);
     localStorage.setItem('zip', postalCode.value);
     localStorage.setItem('email', signUpEmail.value);
@@ -319,18 +319,10 @@ window.onload = function(){
 
   function submitRequest(){
     if(validateAllInputs){
-      fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?' +
-        'name=' + name.value +
-        '&lastName=' + lastName.value +
-        '&dni=' + docNumber.value +
-        '&dob=' + date.value +
-        '&phone=' + phone.value +
-        '&address=' + direction.value +
-        '&city=' + location.value +
-        '&zip=' + postalCode.value +
-        '&email=' + signUpEmail.value +
-        '&password=' + signUpPassword.value +
-        '&confirmPassword =' + confirmPassword.value)
+      fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?' + 'name=' + name.value +'&lastName=' + 
+      lastName.value + '&dni=' + docNumber.value + '&dob=' + date.value + '&phone=' + phone.value +
+      '&address=' + direction.value + '&city=' + location.value + '&zip=' + postalCode.value + '&email=' + 
+      signUpEmail.value + '&password=' + signUpPassword.value + '&confirmPassword =' + confirmPassword.value)
         .then(function(response){
           return response.json();
         })
@@ -339,7 +331,7 @@ window.onload = function(){
             var validatedAlert = data.msg + '\n' + signUpAlert;
             alert(validatedAlert);
             saveCredentials();
-          } else{
+          } else {
             alert('Request rejected \n' + signUpAlert);
           }
         })
@@ -352,6 +344,25 @@ window.onload = function(){
       }
     }
 
+  function fillWithLocalStorage() {
+    if (localStorage.name && localStorage.lastName && localStorage.document && localStorage.date && localStorage.phone
+      && localStorage.address && localStorage.city && localStorage.zip && localStorage.email && localStorage.password
+      && localStorage.confirmPassword) {
+      name.value = localStorage.name;
+      lastName.value = localStorage.lastName;
+      docNumber.value = localStorage.document;
+      date.value = localStorage.date;
+      phone.value = localStorage.phone;
+      direction.value = localStorage.address;
+      location.value = localStorage.city;
+      postalCode.value = localStorage.zip;
+      signUpEmail.value = localStorage.email;
+      signUpPassword.value = localStorage.password;
+      confirmPassword.value = localStorage.confirmPassword;
+    }
+  }
+
+  fillWithLocalStorage();
   name.addEventListener('blur', showNameErrors);
   name.addEventListener('focus', hideNameErrors);
   lastName.addEventListener('blur', showLastNameErrors);
