@@ -30,6 +30,9 @@ You can check them out by visiting https://paurinaldi.github.io/BaSP-M2022-Etapa
 We coded the html and css of the log in and the employee's sign up pages of the app, as well as linked them together with the landing page. We also started applying JavaScript to validate the forms.
 You can check this week's work out by visiting https://paurinaldi.github.io/BaSP-M2022-Etapa-1/Semana-06/views/index.html
 
+## Week 07: Asyncronism
+After studying how JavaScript works asyncronically, and the problems It generates with certain tasks in which we might need to control or limit the way it executes one task after another, with things such as callbacks and promises, we applied what we learned and kept working on the login and sign up forms, storing their data and generating alerts for success operations and errors. 
+
 ```
 Project Status: Developing
 Made by: Paula Rinaldi
