@@ -10,7 +10,7 @@ var signUpEmailMessage = '';
 var signUpPasswordMessage = '';
 var confirmPasswordMessage = '';
 
-function validateJustLetters(string) {
+function validateHasLetters(string) {
   var notANumber = false;
   for (var i = 0; i < string.length; i++) {
     var nameElement = string[i];
@@ -21,7 +21,7 @@ function validateJustLetters(string) {
   return notANumber;
 };
 
-function validateJustNumbers(string) {
+function validateHasNumbers(string) {
   var isNumber = false;
   for (var i = 0; i < string.length; i++) {
     var docElement = string[i];
@@ -43,7 +43,7 @@ function validateStringLength(string, number) {
 function validateTextNumberAndSpaces(string) {
   var validation = false;
   var firstNumber;
-  if (validateJustNumbers(string) && validateJustLetters(string)) {
+  if (validateHasNumbers(string) && validateHasLetters(string)) {
     if (string.indexOf(' ') != -1) {
       firstNumber = string.indexOf(' ');
       if (!isNaN(string[firstNumber + 1])) {
@@ -69,12 +69,6 @@ function validateSignUpEmail(input) {
   var regExEmail = /[a-z0-9]+@[a-z]+.[a-z]{2,3}/;
   return regExEmail.test(input);
 };
-
-// function validateDate(input) {
-//   var actualDay = new Date();
-//   var inputDate = new Date(input);
-//   return inputDate <= actualDay;
-// }
 
 function validateDate(string){
   var dateIsValid = false;
@@ -113,7 +107,7 @@ window.onload = function(){
   var signUpAlert;
  
   function showNameErrors() {
-    if (!validateJustLetters(name.value) || !validateStringLength (name.value, 3) || validateJustNumbers(name.value)) {
+    if (!validateHasLetters(name.value) || !validateStringLength (name.value, 3) || validateHasNumbers(name.value)) {
       nameError.style.visibility = 'visible';
       name.classList = 'invalid-input';
       nameMessage = nameError.textContent;
@@ -128,8 +122,8 @@ window.onload = function(){
   }
 
   function showLastNameErrors() {
-    if (!validateJustLetters(lastName.value) || !validateStringLength (lastName.value, 3) ||
-    validateJustNumbers(lastName.value)) {
+    if (!validateHasLetters(lastName.value) || !validateStringLength (lastName.value, 3) ||
+    validateHasNumbers(lastName.value)) {
       lastNameError.style.visibility = 'visible';
       lastName.classList = 'invalid-input';
       lastNameMessage = lastNameError.textContent;
@@ -144,8 +138,8 @@ window.onload = function(){
   }
 
   function showDocErrors() {
-    if (!validateJustNumbers(docNumber.value) || !validateStringLength(docNumber.value, 7) ||
-     validateJustLetters(docNumber.value)) {
+    if (!validateHasNumbers(docNumber.value) || !validateStringLength(docNumber.value, 7) ||
+     validateHasLetters(docNumber.value)) {
       docError.style.visibility = 'visible';
       docNumber.classList = 'invalid-input';
       docNumberMessage = docError.textContent;
@@ -175,7 +169,7 @@ window.onload = function(){
   }
 
   function showPhoneErrors() {
-    if (!validateJustNumbers(phone.value) || validateJustLetters(phone.value) || phone.value.length != 10) {
+    if (!validateHasNumbers(phone.value) || validateHasLetters(phone.value) || phone.value.length != 10) {
       phoneError.style.visibility = 'visible';
       phone.classList = 'invalid-input';
       phoneMessage = phoneError.textContent;
@@ -205,7 +199,7 @@ window.onload = function(){
   }
 
   function showLocationErrors() {
-    if (!validateJustLetters(location.value) || !validateJustNumbers(location.value) ||
+    if (!validateHasLetters(location.value) || !validateHasNumbers(location.value) ||
      !(countLetters(location.value) > 3)) {
       locationError.style.visibility = 'visible';
       location.classList = 'invalid-input';
@@ -221,7 +215,7 @@ window.onload = function(){
   }
 
   function showPostalCodeErrors() {
-    if (!validateJustNumbers(postalCode.value) || validateJustLetters(postalCode.value) || postalCode.value.length < 4 || 
+    if (!validateHasNumbers(postalCode.value) || validateHasLetters(postalCode.value) || postalCode.value.length < 4 || 
     postalCode.value.length > 5) {
       postalCodeError.style.visibility = 'visible';
       postalCode.classList = 'invalid-input';
@@ -252,7 +246,7 @@ window.onload = function(){
   }
 
   function showSignUpPasswordErrors() {
-    if (!validateJustLetters(signUpPassword.value) || !validateJustNumbers(signUpPassword.value) || 
+    if (!validateHasLetters(signUpPassword.value) || !validateHasNumbers(signUpPassword.value) || 
     !validateStringLength(signUpPassword.value, 7)) {
       signUpPasswordError.style.visibility = 'visible';
       signUpPassword.classList = 'invalid-input';
@@ -268,7 +262,7 @@ window.onload = function(){
   }
 
   function showConfirmPasswordErrors() {
-    if (!validateJustLetters(confirmPassword.value) || !validateJustNumbers(confirmPassword.value) || 
+    if (!validateHasLetters(confirmPassword.value) || !validateHasNumbers(confirmPassword.value) || 
     !validateStringLength(confirmPassword.value, 7)) {
       confirmPasswordError.style.visibility = 'visible';
       confirmPassword.classList = 'invalid-input';
@@ -292,8 +286,7 @@ window.onload = function(){
     submitRequest();
   }
 
-  function validateAllInputs(){
-    //no estoy segura de si esto conviene hacerlo con un if o simplemente retornar lo que hay entre ().
+  function validateAllInputs() {
     if(nameMessage == name.value && lastNameMessage == lastName.value && docNumberMessage == docNumber.value &&
     dateMessage == date.value && phoneMessage == phone.value && directionMessage == direction.value &&
     locationMessage == location.value && postalCodeMessage == postalCode.value && signUpEmailMessage ==
@@ -303,7 +296,7 @@ window.onload = function(){
     }
   }
 
-  function saveCredentials(){
+  function saveCredentials() {
     localStorage.setItem('name', name.value);
     localStorage.setItem('lastName', lastName.value);
     localStorage.setItem('document', docNumber.value);
@@ -317,37 +310,37 @@ window.onload = function(){
     localStorage.setItem('confirmPassword', confirmPassword.value);
   }
 
-  function submitRequest(){
-    if(validateAllInputs){
+  function submitRequest() {
+    if (validateAllInputs) {
       fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?' + 'name=' + name.value +'&lastName=' + 
       lastName.value + '&dni=' + docNumber.value + '&dob=' + date.value + '&phone=' + phone.value +
       '&address=' + direction.value + '&city=' + location.value + '&zip=' + postalCode.value + '&email=' + 
       signUpEmail.value + '&password=' + signUpPassword.value + '&confirmPassword =' + confirmPassword.value)
-        .then(function(response){
-          return response.json();
-        })
-        .then (function(data){
-          if(data.success == true){
-            var validatedAlert = data.msg + '\n' + signUpAlert;
-            alert(validatedAlert);
-            saveCredentials();
-          } else {
-            alert('Request rejected \n' + signUpAlert);
-          }
-        })
-    //     .catch (function(error){
-    //       alert(error.msg);
-    //     })
-    // } else {
-    //   alert('Request rejected \n' + signUpAlert)
-    // }
-      }
-    }
+      .then (function(response) {
+        return response.json();
+      })
+      .then (function(data) {
+        if (data.success){
+          var validatedAlert = data.msg + '\n' + signUpAlert;
+          alert(validatedAlert);
+          saveCredentials();
+        } else {
+          throw Error;
+        }
+      })
+      .catch (function() {
+        var alertError = 'Request Denied \n' + signUpAlert;
+        alert(alertError);
+      })
+    } 
+  }
+  
+    
 
   function fillWithLocalStorage() {
     if (localStorage.name && localStorage.lastName && localStorage.document && localStorage.date && localStorage.phone
-      && localStorage.address && localStorage.city && localStorage.zip && localStorage.email && localStorage.password
-      && localStorage.confirmPassword) {
+    && localStorage.address && localStorage.city && localStorage.zip && localStorage.email && localStorage.password
+    && localStorage.confirmPassword) {
       name.value = localStorage.name;
       lastName.value = localStorage.lastName;
       docNumber.value = localStorage.document;

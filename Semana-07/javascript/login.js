@@ -74,24 +74,28 @@ window.onload = function() {
 
 
 
-  function allValidated(){
+  function allValidated() {
     return validateEmail(email.value) && validateNumbersAndLetters(password.value) && password.value.length > 7;
   }
 
-  function submitInfo(){
-    if(allValidated()) {
+  function submitInfo() {
+    if (allValidated()) {
       fetch('https://basp-m2022-api-rest-server.herokuapp.com/login?email=' +
       email.value + '&password=' + password.value)
-      .then(function (response) {
+      .then (function (response) {
         return response.json();
       })
-      .then(function (data) {
-        console.log(data);
-        var correctAlert = data.msg + '\n' + alertMessage;
-        alert(correctAlert);
+      .then (function (data) {
+        if(data.success){
+          console.log(data);
+          var correctAlert = data.msg + '\n' + alertMessage;
+          alert(correctAlert);
+        } else {
+          throw Error;
+        }
       })
-      .catch(function(error){
-        alert(error.msg);
+      .catch (function() {
+        alert('user not found');
       });
     } else {
       alert('Request rejected \n'+ alertMessage);
