@@ -44,6 +44,6 @@ console.log('Solution02_e:', firstBlankSpace);
 
 var longWords = 'appreciate strawberry'
 var spaceIndex = longWords.indexOf(' ')
-var longWordsFormatted = (longWords.substring(0,1).toUpperCase() + longWords.substring(1, 10).toLowerCase()) + 
-longWords.substring(10,11) + (longWords.substring(11, 12).toUpperCase() + longWords.substring(12).toLowerCase());
+var longWordsFormatted = (longWords.substring(0,1).toUpperCase() + longWords.substring(1, spaceIndex).toLowerCase()) + 
+longWords.substring(spaceIndex, 11) + (longWords.substring(11, 12).toUpperCase() + longWords.substring(12).toLowerCase());
 console.log('Solution02_f:', longWordsFormatted);

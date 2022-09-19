@@ -13,33 +13,31 @@ console.log('Solution06_a:', resultA);
 //mostrar una alerta aclarando que uno de los parámetros tiene error y retornar el valor NaN como resultado.
 
 function sumWithNumberValidated(num1, num2){
-  if(isNaN(num1)||isNaN(num2)){
+  if(typeof num1 || typeof num2 != 'number'){
     alert('Error: At least one of the parameters is wrong.');
     return NaN
   } else {
   return num1 + num2;
   }
 }
-console.log('Solution06_b:', sumWithNumberValidated(4,'a'));
+console.log('Solution06_b:', sumWithNumberValidated(4,'2.3'));
 
 //c. Crear una función validate integer que reciba un número como parámetro y devuelva verdadero si es un número
 //entero.
 
 function validateInteger(number){
-  if (Number.isInteger(number)) {
-    return true
-  }
+  return Number.isInteger(number)
 }
-console.log('Solution06_c:', validateInteger(1))
+console.log('Solution06_c:', validateInteger(1.5))
 
 //d. A la función suma del ejercicio 6b) agregarle una llamada que valide que los números sean enteros. En caso que
 // haya decimales mostrar un alerta con el error y retorna el número convertido a entero (redondeado).
 
 function sumWithIntegerValidated (num1, num2){
-  if(isNaN(num1)||isNaN(num2)){
+  if((typeof num1 || typeof num2) != 'number'){
     alert('Error: At least one of the parameters is wrong.');
     return NaN;
-  } else if(!Number.isInteger(num1)||!Number.isInteger(num2)){
+  } else if(!validateInteger(num1)||!validateInteger(num2)){
     alert('Numbers need to be integers');
     return Math.round(num1 + num2);
   } else {
@@ -52,19 +50,26 @@ console.log('Solution06_d:', sumWithIntegerValidated(3.3, 6));
 // que todo siga funcionando igual.
 
 function validtation (num1, num2) {
-  if(isNaN(num1)||isNaN(num2)){
+  if((typeof num1 || typeof num2) != 'number'){
     alert('Error: At least one of the parameters is wrong.');
     return NaN;
-  } else if(!Number.isInteger(num1)||!Number.isInteger(num2)){
+  } else if(!validateInteger(num1)||!validateInteger(num2)){
     alert('Numbers need to be integers');
     return Math.round(num1 + num2);
   }
 }
-function sumToValidate (num1, num2){
-  if (Number.isInteger(num1 && num2)){
-    return num1+num2;
+// function sumToValidate (num1, num2){
+//   if (Number.isInteger(num1 && num2)){
+//     return num1+num2;
+//   } else {
+//     return validtation(num1, num2);
+//   }
+// }
+function sumToValidate(num1, num2){
+  if(validtation(num1, num2) != (NaN || Math.round(num1 + num2))){
+    return (num1 + num2)
   } else {
-    return validtation(num1, num2);
+    return validtation(num1, num2)
   }
 }
-console.log('Solution06_e:', sumToValidate(1, 4.3));
+console.log('Solution06_e:', sumToValidate(1.6, 4));
